@@ -50,8 +50,7 @@ Os ficheiros vêm da pasta partilhada "Nkela Studios - Identidade Visual" e est�
 O castanho é escuro demais para texto sobre fundo escuro, por isso o destaque (botões, links activos,
 etiquetas) é o dourado, com texto escuro por cima, e o castanho aparece em brilhos, contornos e no logótipo.
 
-**Ainda por aplicar:** as fontes oficiais (não estavam na pasta), as fotografias reais do portfólio,
-e os contactos e redes sociais reais (`js/config.js`).
+**Ainda por aplicar:** as fontes oficiais (não estavam na pasta) e os contactos e redes sociais reais (`js/config.js`). Portfólio, banner e imagem do "Sobre" já são fotos do estúdio (`img/portfolio/`, `img/banner-hero.jpg`, `img/sobre.jpg`).
 
 ## Como personalizar
 

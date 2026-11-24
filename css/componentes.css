@@ -201,8 +201,14 @@
   justify-content: center;
   padding-block: calc(var(--altura-nav) + 3rem) 5rem;
   overflow: hidden;
-  /* Fundo em degradé diagonal: castanho muito escuro → castanho profundo → castanho muito escuro */
-  background: linear-gradient(135deg, var(--cor-fundo) 0%, var(--cor-castanho-escuro) 50%, var(--cor-fundo) 100%);
+  /* Fundo: fotografia do estúdio (img/banner-hero.jpg) com uma película escura
+     por cima (degradé castanho) para o texto branco ler-se bem em qualquer ecrã.
+     Para trocar a foto basta substituir o ficheiro ou mudar o caminho abaixo. */
+  background:
+    linear-gradient(180deg, rgb(20 12 8 / 0.55) 0%, rgb(20 12 8 / 0.70) 60%, var(--cor-fundo) 100%),
+    linear-gradient(90deg, rgb(58 28 13 / 0.55) 0%, rgb(20 12 8 / 0.15) 100%),
+    url("../img/banner-hero.jpg") center 35% / cover no-repeat;
+  background-color: var(--cor-fundo); /* reserva enquanto a foto carrega */
 }
 
 /* Padrão africano da marca (rostos, espirais, losangos) por trás do conteúdo.
@@ -212,7 +218,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  opacity: 0.08;
+  opacity: 0.05;
   background: url("../img/marca/padrao-dourado.png") center / cover no-repeat;
 }
 
@@ -641,9 +647,37 @@ dialog::backdrop {
 /* ==========================================================================
    9. SOBRE
    ========================================================================== */
-.sobre__texto {
-  max-width: 56rem;
+/* Disposição "Sobre": imagem à esquerda, texto à direita.
+   No telemóvel (ecrã estreito) ficam empilhados: imagem por cima, texto por baixo. */
+.sobre {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+  max-width: 72rem;
   margin-inline: auto;
+}
+@media (min-width: 900px) {
+  .sobre { grid-template-columns: 5fr 6fr; gap: 4rem; }
+}
+
+.sobre__imagem {
+  position: relative;
+  margin: 0;
+  border-radius: var(--raio);
+  overflow: hidden;
+  border: 1px solid var(--cor-borda-destaque);
+  box-shadow: 0 1.5rem 3rem rgb(0 0 0 / 0.45);
+}
+.sobre__imagem img {
+  display: block;
+  width: 100%;
+  height: auto;            /* ignora o atributo height do HTML; quem manda é o aspect-ratio */
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 25%; /* mantém os rostos visíveis no corte */
+}
+
+.sobre__texto {
   display: grid;
   gap: 1.5rem;
   color: var(--cor-texto-suave);

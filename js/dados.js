@@ -5,9 +5,9 @@
    cartões automaticamente a partir destas listas: para acrescentar uma foto
    ou um produto, copie um bloco { ... } e altere os valores.
 
-   ATENÇÃO: as imagens abaixo são fotografias de exemplo (banco de imagens
-   gratuito). Substitua-as pelas do estúdio: coloque os ficheiros na pasta
-   "img" e escreva o caminho, por exemplo:  imagem: 'img/casamento-01.jpg'
+   As fotografias do portfólio são as do estúdio, em img/portfolio/ (JPEG de
+   ~1200px, optimizados para a web). Para acrescentar uma, guarde-a nessa pasta
+   e copie um bloco abaixo.  Os produtos da loja ainda usam fotos de exemplo.
    ========================================================================== */
 
 (function () {
@@ -25,12 +25,24 @@
      categoria: usada nos filtros — fotos com a mesma categoria ficam juntas
      imagem:    caminho ou endereço da foto                                  */
   const fotografias = [
-    { id: 1, titulo: 'Sessão de Retrato',     categoria: 'Retrato',   imagem: exemplo('photo-1544124094-8aea0374da93') },
-    { id: 2, titulo: 'Paisagem ao Entardecer', categoria: 'Paisagem',  imagem: exemplo('photo-1534218238612-bace67b05bf2') },
-    { id: 3, titulo: 'Cerimónia de Casamento', categoria: 'Casamento', imagem: exemplo('photo-1533091090875-1ff4acc497dd') },
-    { id: 4, titulo: 'Cobertura de Evento',    categoria: 'Evento',    imagem: exemplo('photo-1614607653708-0777e6d003b8') },
-    { id: 5, titulo: 'Retratos Profissionais', categoria: 'Retrato',   imagem: exemplo('photo-1759974990343-c960e5831853') },
-    { id: 6, titulo: 'Fotografia Urbana',      categoria: 'Paisagem',  imagem: exemplo('photo-1534218238612-bace67b05bf2') }
+    { id: 1, titulo: 'Aniversário — 30 anos', categoria: 'Aniversários', imagem: 'img/portfolio/aniversarios-1.jpg' },
+    { id: 2, titulo: 'Aniversário — Balões', categoria: 'Aniversários', imagem: 'img/portfolio/aniversarios-2.jpg' },
+    { id: 3, titulo: 'Kids — Princesa dos 5 anos', categoria: 'Kids', imagem: 'img/portfolio/kids-1.jpg' },
+    { id: 4, titulo: 'Kids — Confetes e balões', categoria: 'Kids', imagem: 'img/portfolio/kids-2.jpg' },
+    { id: 5, titulo: 'Ensaio Casual — Fitness', categoria: 'Casuais', imagem: 'img/portfolio/casuais-1.jpg' },
+    { id: 6, titulo: 'Ensaio Casual — Tradição', categoria: 'Casuais', imagem: 'img/portfolio/casuais-2.jpg' },
+    { id: 7, titulo: 'Noivado — Elegância', categoria: 'Noivados', imagem: 'img/portfolio/noivados-1.jpg' },
+    { id: 8, titulo: 'Noivado — Retrato do noivo', categoria: 'Noivados', imagem: 'img/portfolio/noivados-2.jpg' },
+    { id: 9, titulo: 'Casamento — Pôr do sol na praia', categoria: 'Casamentos', imagem: 'img/portfolio/casamentos-1.jpg' },
+    { id: 10, titulo: 'Casamento — Primeira dança', categoria: 'Casamentos', imagem: 'img/portfolio/casamentos-2.jpg' },
+    { id: 11, titulo: 'Gestante — Luz suave', categoria: 'Gestantes', imagem: 'img/portfolio/gestantes-1.jpg' },
+    { id: 12, titulo: 'Gestante — Em casal', categoria: 'Gestantes', imagem: 'img/portfolio/gestantes-2.jpg' },
+    { id: 13, titulo: 'New Born — Sono sereno', categoria: 'New Born', imagem: 'img/portfolio/newborn-1.jpg' },
+    { id: 14, titulo: 'New Born — Detalhes', categoria: 'New Born', imagem: 'img/portfolio/newborn-2.jpg' },
+    { id: 15, titulo: 'Baptismo — O momento', categoria: 'Baptísmos', imagem: 'img/portfolio/baptismos-1.jpg' },
+    { id: 16, titulo: 'Baptismo — A bênção', categoria: 'Baptísmos', imagem: 'img/portfolio/baptismos-2.jpg' },
+    { id: 17, titulo: 'Corporativo — Executivo', categoria: 'Corporativas', imagem: 'img/portfolio/corporativas-1.jpg' },
+    { id: 18, titulo: 'Corporativo — Estilo profissional', categoria: 'Corporativas', imagem: 'img/portfolio/corporativas-2.jpg' }
   ];
 
   /* ----- VÍDEOS -----
@@ -41,10 +53,10 @@
      Se ambos estiverem vazios, o visitante vê um aviso de "vídeo indisponível".
      imagem: capa do vídeo (miniatura). */
   const videos = [
-    { id: 1, titulo: 'Vídeo Corporativo',  categoria: 'Comercial',      imagem: exemplo('photo-1663862566495-a10edd749ba3'), youtubeId: '', ficheiro: '' },
-    { id: 2, titulo: 'Filme de Casamento', categoria: 'Casamento',      imagem: exemplo('photo-1533091090875-1ff4acc497dd'), youtubeId: '', ficheiro: '' },
-    { id: 3, titulo: 'Videoclipe',         categoria: 'Entretenimento', imagem: exemplo('photo-1663862566495-a10edd749ba3'), youtubeId: '', ficheiro: '' },
-    { id: 4, titulo: 'Resumo de Evento',   categoria: 'Evento',         imagem: exemplo('photo-1614607653708-0777e6d003b8'), youtubeId: '', ficheiro: '' }
+    { id: 1, titulo: 'Vídeo Corporativo',  categoria: 'Comercial',      imagem: 'img/portfolio/corporativas-1.jpg', youtubeId: '', ficheiro: '' },
+    { id: 2, titulo: 'Filme de Casamento', categoria: 'Casamento',      imagem: 'img/portfolio/casamentos-2.jpg', youtubeId: '', ficheiro: '' },
+    { id: 3, titulo: 'Videoclipe',         categoria: 'Entretenimento', imagem: 'img/portfolio/aniversarios-1.jpg', youtubeId: '', ficheiro: '' },
+    { id: 4, titulo: 'Resumo de Evento',   categoria: 'Evento',         imagem: 'img/portfolio/baptismos-2.jpg', youtubeId: '', ficheiro: '' }
   ];
 
   /* ----- PRODUTOS DA LOJA -----
