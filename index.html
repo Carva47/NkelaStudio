@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+  <!-- ======================================================================
+       index.html — ESTRUTURA DA PÁGINA
+       Todo o site está numa única página, dividida em secções:
+         Menu · Início (hero) · Portfólio · Loja · Sobre · Contacto · Rodapé
+       Textos que mudam de estúdio para estúdio (nome, contactos, redes
+       sociais) NÃO estão escritos aqui: vêm de js/config.js e são inseridos
+       pelo JavaScript nos elementos marcados com data-config / data-link.
+       ====================================================================== -->
+  <meta charset="UTF-8">
+
+  <!-- Faz o site ajustar-se à largura do telemóvel -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Nkela Studios | Fotografia e Vídeo</title>
+  <meta name="description" content="Serviços profissionais de fotografia e vídeo: retratos, casamentos, eventos e produção comercial.">
+
+  <!-- Cor da barra do navegador no telemóvel -->
+  <meta name="theme-color" content="#803e1e">
+
+  <!-- Ícone do separador do navegador -->
+  <link rel="icon" type="image/png" href="img/marca/favicon.png">
+
+  <!-- Marca o <html> com a classe "js" assim que a página começa a carregar.
+       O CSS usa-a para activar as animações de aparecimento (ver base.css).
+       Se o JavaScript estiver desligado, a classe não existe e tudo fica visível. -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Folhas de estilo (a ORDEM importa: variáveis → base → componentes) -->
+  <link rel="stylesheet" href="css/variaveis.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/componentes.css">
+</head>
+
+<body>
+
+  <!-- Link invisível para quem navega com teclado saltar directo ao conteúdo -->
+  <a class="link-saltar" href="#conteudo">Saltar para o conteúdo</a>
+
+
+  <!-- =====================================================================
+       MENU DE NAVEGAÇÃO (fixo no topo)
+       ===================================================================== -->
+  <header class="nav" id="nav">
+    <div class="container nav__interior">
+
+      <!-- Marca: se houver logótipo em config.js mostra a imagem,
+           senão mostra o nome do estúdio em texto -->
+      <a class="marca" href="#inicio" aria-label="Ir para o início">
+        <img class="marca__img" alt="" hidden>
+        <span class="marca__texto" data-config="nome"></span>
+      </a>
+
+      <!-- Botão "hambúrguer" (só aparece em telemóvel) -->
+      <button class="nav__burger" id="btn-menu" type="button"
+              aria-expanded="false" aria-controls="menu-principal"
+              aria-label="Abrir menu">
+        <span class="icone-abrir"  data-icone="menu"  data-tamanho="26"></span>
+        <span class="icone-fechar" data-icone="x"     data-tamanho="26"></span>
+      </button>
+
+      <!-- Menu principal. O atributo data-secao liga cada link à sua secção
+           (usado para destacar o link da secção que está a ser vista) -->
+      <nav class="nav__menu" id="menu-principal" aria-label="Principal">
+        <ul class="nav__lista">
+          <li><a class="nav__link" href="#inicio"    data-secao="inicio">Início</a></li>
+          <li><a class="nav__link" href="#portfolio" data-secao="portfolio">Portfólio</a></li>
+          <li><a class="nav__link" href="#loja"      data-secao="loja">Loja</a></li>
+          <li><a class="nav__link" href="#sobre"     data-secao="sobre">Sobre</a></li>
+          <li><a class="nav__link" href="#contacto"  data-secao="contacto">Contacto</a></li>
+        </ul>
+
+        <!-- Abre a gaveta do carrinho. O número é actualizado por loja.js -->
+        <button class="btn btn--primario nav__carrinho" id="btn-carrinho" type="button">
+          <span data-icone="sacola" data-tamanho="18"></span>
+          <!-- O texto e o número ficam num só <span> para não ficarem separados pelo espaçamento do botão -->
+          <span>Carrinho (<span data-carrinho-contagem>0</span>)</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+
+  <main id="conteudo">
+
+    <!-- =====================================================================
+         INÍCIO (hero)
+         ===================================================================== -->
+    <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+      <!-- Círculos de luz decorativos (aria-hidden: ignorados por leitores de ecrã) -->
+      <div class="hero__brilho hero__brilho--a" aria-hidden="true"></div>
+      <div class="hero__brilho hero__brilho--b" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero__conteudo">
+
+          <div class="marca">
+            <img class="marca__img" alt="" hidden>
+            <span class="marca__texto" data-config="nome"></span>
+          </div>
+
+          <p class="hero__slogan" data-config="slogan"></p>
+
+          <h1 class="hero__titulo" id="hero-titulo">
+            Serviços Profissionais de Fotografia e Vídeo
+          </h1>
+
+          <p class="hero__texto">
+            Transforme a sua visão em conteúdo inesquecível. Da fotografia
+            marcante ao vídeo cinematográfico, damos vida às suas histórias
+            com qualidade profissional e excelência criativa.
+          </p>
+
+          <div class="hero__botoes">
+            <a class="btn btn--primario btn--grande" href="#portfolio">
+              <span data-icone="camera"></span> Ver Portfólio
+            </a>
+            <a class="btn btn--contorno btn--grande" href="#loja">
+              <span data-icone="play"></span> Ver a Loja
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================================
+         PORTFÓLIO
+         Duas abas (Fotografia / Vídeo). Os cartões são criados pelo
+         JavaScript (js/portfolio.js) a partir da lista em js/dados.js.
+         ===================================================================== -->
+    <section class="secao secao--clara" id="portfolio" aria-labelledby="portfolio-titulo">
+      <div class="container">
+
+        <div class="secao__cabecalho revelar">
+          <p class="secao__etiqueta">O Nosso Trabalho</p>
+          <h2 class="secao__titulo" id="portfolio-titulo">Portfólio</h2>
+          <p class="secao__descricao">
+            Explore a nossa colecção de fotografia marcante e vídeo cinematográfico.
+          </p>
+        </div>
+
+        <!-- Abas (padrão ARIA "tabs": o JavaScript troca qual está activa) -->
+        <div class="abas revelar" role="tablist" aria-label="Tipo de trabalho">
+          <button class="aba" id="aba-fotografia" type="button" role="tab"
+                  data-aba aria-selected="true" aria-controls="painel-fotografia">
+            Fotografia
+          </button>
+          <button class="aba" id="aba-video" type="button" role="tab"
+                  data-aba aria-selected="false" aria-controls="painel-video" tabindex="-1">
+            Vídeo
+          </button>
+        </div>
+
+        <!-- Painel de fotografia -->
+        <div id="painel-fotografia" role="tabpanel" aria-labelledby="aba-fotografia">
+          <div class="filtros" id="filtros-fotos" role="group" aria-label="Filtrar fotografias por categoria"></div>
+          <div class="grade" id="grade-fotos"></div>
+        </div>
+
+        <!-- Painel de vídeo (escondido até clicar na aba) -->
+        <div id="painel-video" role="tabpanel" aria-labelledby="aba-video" hidden>
+          <div class="grade" id="grade-videos"></div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================================
+         LOJA
+         Produtos criados por js/loja.js a partir de js/dados.js.
+         ===================================================================== -->
+    <section class="secao secao--escura" id="loja" aria-labelledby="loja-titulo">
+      <div class="container">
+
+        <div class="secao__cabecalho revelar">
+          <p class="secao__etiqueta">Produtos</p>
+          <h2 class="secao__titulo" id="loja-titulo">A Nossa Colecção</h2>
+          <p class="secao__descricao">
+            Leve para casa um pedaço da nossa arte. Descubra impressões premium,
+            quadros com moldura e vestuário exclusivo.
+          </p>
+        </div>
+
+        <div class="filtros revelar" id="filtros-loja" role="group" aria-label="Filtrar produtos por categoria"></div>
+        <div class="grade grade--loja" id="grade-produtos"></div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================================
+         SOBRE
+         ===================================================================== -->
+    <section class="secao secao--clara" id="sobre" aria-labelledby="sobre-titulo">
+      <div class="container">
+
+        <div class="secao__cabecalho revelar">
+          <p class="secao__etiqueta">Sobre Nós</p>
+          <h2 class="secao__titulo" id="sobre-titulo">Criamos Histórias Visuais</h2>
+        </div>
+
+        <div class="sobre__texto revelar">
+          <p>
+            No <strong data-config="nome"></strong>, acreditamos que cada momento tem o potencial de
+            se tornar inesquecível. Com anos de experiência em fotografia e vídeo profissionais,
+            especializamo-nos em transformar momentos comuns em histórias visuais extraordinárias.
+          </p>
+          <p>
+            A nossa equipa combina conhecimento técnico com visão criativa para entregar resultados
+            que superam expectativas. Seja a emoção de um casamento, a energia de um evento
+            corporativo ou a beleza de uma paisagem, levamos paixão e profissionalismo a
+            cada projecto.
+          </p>
+          <p>
+            Orgulhamo-nos de não nos limitarmos a responder às necessidades dos clientes:
+            antecipamo-las. O nosso compromisso com a qualidade e a atenção ao detalhe
+            valeu-nos reconhecimento como uma das referências na produção criativa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================================
+         CONTACTO
+         Lado esquerdo: dados de contacto (vêm de config.js).
+         Lado direito: formulário (validado por js/contacto.js).
+         ===================================================================== -->
+    <section class="secao secao--escura" id="contacto" aria-labelledby="contacto-titulo">
+      <div class="container">
+
+        <div class="secao__cabecalho revelar">
+          <p class="secao__etiqueta">Fale Connosco</p>
+          <h2 class="secao__titulo" id="contacto-titulo">Contacto</h2>
+          <p class="secao__descricao">
+            Pronto para criar algo inesquecível? Entre em contacto para falarmos do seu próximo projecto.
+          </p>
+        </div>
+
+        <div class="contacto">
+
+          <!-- Dados de contacto -->
+          <div class="revelar">
+            <h3>Informações de Contacto</h3>
+
+            <div class="contacto__lista">
+              <div class="contacto__item">
+                <span class="contacto__item-icone" data-icone="email"></span>
+                <div>
+                  <p class="contacto__rotulo">Email</p>
+                  <a data-link="email" data-config="contacto.email"></a>
+                </div>
+              </div>
+
+              <div class="contacto__item">
+                <span class="contacto__item-icone" data-icone="telefone"></span>
+                <div>
+                  <p class="contacto__rotulo">Telefone</p>
+                  <a data-link="telefone" data-config="contacto.telefone"></a>
+                </div>
+              </div>
+
+              <div class="contacto__item">
+                <span class="contacto__item-icone" data-icone="local"></span>
+                <div>
+                  <p class="contacto__rotulo">Localização</p>
+                  <p data-config="contacto.morada"></p>
+                </div>
+              </div>
+            </div>
+
+            <h3>Siga-nos</h3>
+            <div class="redes">
+              <a data-link="instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                <span data-icone="instagram"></span>
+              </a>
+              <a data-link="facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                <span data-icone="facebook"></span>
+              </a>
+              <a data-link="youtube" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                <span data-icone="youtube"></span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Formulário. "novalidate" desliga os balões de erro do navegador,
+               porque mostramos as nossas próprias mensagens (em contacto.js) -->
+          <form class="formulario revelar" id="formulario-contacto" novalidate>
+
+            <div class="campo">
+              <label for="campo-nome">Nome</label>
+              <input id="campo-nome" name="nome" type="text" autocomplete="name"
+                     placeholder="O seu nome" aria-describedby="erro-nome" required>
+              <p class="campo__erro" id="erro-nome" aria-live="polite"></p>
+            </div>
+
+            <div class="campo">
+              <label for="campo-email">Email</label>
+              <input id="campo-email" name="email" type="email" autocomplete="email"
+                     placeholder="o.seu.email@exemplo.com" aria-describedby="erro-email" required>
+              <p class="campo__erro" id="erro-email" aria-live="polite"></p>
+            </div>
+
+            <div class="campo">
+              <label for="campo-assunto">Assunto</label>
+              <input id="campo-assunto" name="assunto" type="text"
+                     placeholder="Sobre o que quer falar?" aria-describedby="erro-assunto" required>
+              <p class="campo__erro" id="erro-assunto" aria-live="polite"></p>
+            </div>
+
+            <div class="campo">
+              <label for="campo-mensagem">Mensagem</label>
+              <textarea id="campo-mensagem" name="mensagem" rows="5"
+                        placeholder="Fale-nos do seu projecto..." aria-describedby="erro-mensagem" required></textarea>
+              <p class="campo__erro" id="erro-mensagem" aria-live="polite"></p>
+            </div>
+
+            <button class="btn btn--primario btn--bloco" type="submit">Enviar Mensagem</button>
+
+            <!-- Mensagem de sucesso/erro geral depois de enviar -->
+            <p class="formulario__estado" id="estado-formulario" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- =====================================================================
+       RODAPÉ
+       ===================================================================== -->
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape__grade">
+
+        <div>
+          <div class="marca">
+            <img class="marca__img" alt="" hidden>
+            <span class="marca__texto" data-config="nome"></span>
+          </div>
+          <p>Capturando momentos e criando histórias através de fotografia e vídeo profissionais.</p>
+        </div>
+
+        <div>
+          <h3>Ligações Rápidas</h3>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="#loja">Loja</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Serviços</h3>
+          <ul>
+            <li>Fotografia de Retrato</li>
+            <li>Fotografia de Casamento</li>
+            <li>Cobertura de Eventos</li>
+            <li>Vídeo Comercial</li>
+            <li>Impressões Personalizadas</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- O ano é preenchido automaticamente pelo main.js -->
+      <p class="rodape__direitos">
+        © <span data-ano></span> <span data-config="nome"></span>. Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- =====================================================================
+       JANELAS (<dialog>) — ficam escondidas até o JavaScript as abrir
+       ===================================================================== -->
+
+  <!-- Foto ampliada (lightbox) -->
+  <dialog class="lightbox" id="lightbox" aria-label="Foto ampliada">
+    <div class="lightbox__figura">
+      <button class="btn-icone lightbox__fechar" type="button" data-fechar aria-label="Fechar">
+        <span data-icone="x"></span>
+      </button>
+      <button class="btn-icone lightbox__seta lightbox__seta--anterior" id="lightbox-anterior" type="button" aria-label="Foto anterior">
+        <span data-icone="seta-esquerda" data-tamanho="26"></span>
+      </button>
+      <button class="btn-icone lightbox__seta lightbox__seta--seguinte" id="lightbox-seguinte" type="button" aria-label="Foto seguinte">
+        <span data-icone="seta-direita" data-tamanho="26"></span>
+      </button>
+      <img class="lightbox__imagem" id="lightbox-imagem" alt="">
+    </div>
+    <div class="lightbox__legenda">
+      <p><strong id="lightbox-titulo"></strong> · <span id="lightbox-categoria"></span></p>
+      <p class="lightbox__contador" id="lightbox-contador"></p>
+    </div>
+  </dialog>
+
+  <!-- Reprodutor de vídeo -->
+  <dialog class="modal-video" id="modal-video" aria-label="Reprodutor de vídeo">
+    <button class="btn-icone" type="button" data-fechar aria-label="Fechar vídeo">
+      <span data-icone="x"></span>
+    </button>
+    <div class="modal-video__corpo" id="modal-video-corpo"></div>
+  </dialog>
+
+  <!-- Carrinho (gaveta lateral) -->
+  <dialog class="carrinho" id="carrinho" aria-labelledby="carrinho-titulo">
+    <div class="carrinho__topo">
+      <h2 id="carrinho-titulo">O seu carrinho</h2>
+      <button class="btn-icone" type="button" data-fechar aria-label="Fechar carrinho">
+        <span data-icone="x"></span>
+      </button>
+    </div>
+
+    <div class="carrinho__corpo" id="carrinho-itens"></div>
+
+    <div class="carrinho__rodape">
+      <p class="carrinho__total"><span>Total</span> <strong id="carrinho-total">0</strong></p>
+      <button class="btn btn--primario btn--bloco" id="btn-finalizar" type="button">
+        Finalizar pelo WhatsApp
+      </button>
+      <button class="btn-texto" id="btn-limpar" type="button">Esvaziar carrinho</button>
+      <p class="carrinho__nota">A encomenda é enviada por WhatsApp e confirmada pela nossa equipa.</p>
+    </div>
+  </dialog>
+
+  <!-- Aviso temporário (ex.: "Adicionado ao carrinho") -->
+  <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+
+
+  <!-- =====================================================================
+       JAVASCRIPT
+       A ORDEM importa — cada ficheiro usa o que o anterior definiu:
+         1. config.js    → dados do estúdio (nome, contactos, ...)
+         2. dados.js     → listas de fotos, vídeos e produtos
+         3. utils.js     → funções de apoio partilhadas
+         4. portfolio.js → abas, filtros, lightbox e vídeos
+         5. loja.js      → produtos e carrinho
+         6. contacto.js  → validação e envio do formulário
+         7. main.js      → menu, ícones, animações e preenchimento de dados
+       ===================================================================== -->
+  <script src="js/config.js"></script>
+  <script src="js/dados.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/portfolio.js"></script>
+  <script src="js/loja.js"></script>
+  <script src="js/contacto.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

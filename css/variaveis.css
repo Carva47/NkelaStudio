@@ -1,0 +1,81 @@
+/* ==========================================================================
+   variaveis.css  —  IDENTIDADE VISUAL DO ESTÚDIO  (Nkela Studios)
+   --------------------------------------------------------------------------
+   Este é o ÚNICO ficheiro que precisa de editar para mudar o aspecto geral
+   do site: cores, tipos de letra, espaçamentos e arredondamentos.
+
+   Como funciona: aqui definimos "variáveis CSS" (começam por --). Os outros
+   ficheiros CSS usam essas variáveis com var(--nome). Mudou o valor aqui,
+   mudou em todo o site.
+
+   Origem das cores: ficheiros oficiais da marca (pasta "Nkela Studios -
+   Identidade Visual"). Castanho #803E1E e dourado #F2C246 são as cores da
+   marca; os tons escuros são derivados do castanho para o tema escuro.
+   ========================================================================== */
+
+:root {
+  /* ------------------------------------------------------------------------
+     CORES DA MARCA (oficiais)
+     ------------------------------------------------------------------------ */
+  --cor-castanho: #803e1e;       /* Castanho Nkela (círculo do logótipo) */
+  --cor-dourado: #f2c246;        /* Dourado Nkela (o "e" do logótipo) */
+  --cor-cinza-marca: #959595;    /* Cinzento do "studios" no logótipo claro */
+
+  /* ------------------------------------------------------------------------
+     CORES DE USO NO SITE
+     O castanho é escuro demais para texto sobre fundo escuro (pouco
+     contraste), por isso o DESTAQUE (botões, ícones, etiquetas) é o dourado
+     e o castanho é usado em superfícies, contornos e brilhos.
+     ------------------------------------------------------------------------ */
+
+  /* Cor de destaque (botões, links activos, ícones, etiquetas) */
+  --cor-primaria: var(--cor-dourado);
+
+  /* Versão mais escura do destaque (quando o rato passa por cima) */
+  --cor-primaria-hover: #dcae33;
+
+  /* Versão transparente do destaque (fundos de ícones) */
+  --cor-primaria-suave: rgb(242 194 70 / 0.12);
+
+  /* Cor do texto escrito POR CIMA do destaque (ex.: texto dos botões dourados).
+     Escuro, para dar contraste suficiente sobre o dourado. */
+  --cor-sobre-primaria: #1a0f08;
+
+  /* ------------------------------------------------------------------------
+     FUNDOS E TEXTOS (tema escuro, em tons de castanho muito escuro)
+     ------------------------------------------------------------------------ */
+  --cor-fundo: #140c08;          /* Fundo principal (secções "escuras") */
+  --cor-fundo-alt: #1f130c;      /* Fundo alternado e cartões */
+  --cor-castanho-escuro: #3a1c0d;/* Castanho profundo (degradé da primeira secção) */
+  --cor-texto: #ffffff;          /* Texto principal e títulos */
+  --cor-texto-suave: #e4d9d0;    /* Texto de parágrafos longos */
+  --cor-texto-mudo: #b3a69b;     /* Texto secundário (descrições, rodapé) */
+  --cor-borda: #3a291e;          /* Contornos de cartões e campos */
+  --cor-borda-nav: rgb(128 62 30 / 0.55);  /* Linha por baixo do menu */
+  --cor-borda-destaque: var(--cor-castanho); /* Contorno das janelas (lightbox, vídeo) */
+  --cor-erro: #f87171;           /* Mensagens de erro nos formulários */
+  --cor-sucesso: #4ade80;        /* Mensagens de sucesso */
+
+  /* ------------------------------------------------------------------------
+     TIPOS DE LETRA
+     Por omissão usamos as fontes do sistema (carregam instantaneamente).
+     Para usar as fontes do estúdio:
+       1) Coloque os ficheiros em /fontes e declare-os com @font-face
+          (ou adicione o link do Google Fonts no <head> do index.html);
+       2) Escreva aqui o nome da fonte à frente da lista.
+     Exemplo:  --fonte-titulos: "Montserrat", system-ui, sans-serif;
+     ------------------------------------------------------------------------ */
+
+  --fonte-titulos: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --fonte-corpo: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* ------------------------------------------------------------------------
+     MEDIDAS GERAIS
+     ------------------------------------------------------------------------ */
+
+  --altura-nav: 5rem;            /* Altura do menu fixo no topo (5rem = 80px) */
+  --espaco-secao: 5rem;          /* Espaço vertical acima/abaixo de cada secção */
+  --largura-max: 1280px;         /* Largura máxima do conteúdo em ecrãs grandes */
+  --raio: 0.5rem;                /* Arredondamento dos cantos (botões, cartões) */
+  --transicao: 300ms ease;       /* Velocidade das animações de hover */
+}
