@@ -539,6 +539,12 @@ dialog::backdrop {
 }
 .produto:hover .produto__media img { transform: scale(1.1); }
 
+/* Imagem inteira, sem cortar (cartazes dos pacotes têm texto em todos os cantos) */
+.produto__media--contida { background: var(--cor-fundo); }
+.produto__media--contida img { object-fit: contain; }
+.produto__media--contida .produto__icone { display: none; }  /* o ícone taparia o título do cartaz */
+.produto:hover .produto__media--contida img { transform: scale(1.03); }
+
 /* Etiqueta "Destaque" no canto superior direito */
 .produto__selo {
   position: absolute;

@@ -142,7 +142,8 @@
       botaoComprar.addEventListener('click', function () { adicionar(produto.id); });
 
       const cartao = U.criar('article', { class: 'produto' }, [
-        U.criar('div', { class: 'produto__media' }, [
+        // ajuste: 'contida' mostra a imagem inteira (sem cortes), ideal para cartazes com texto
+        U.criar('div', { class: 'produto__media' + (produto.ajuste === 'contida' ? ' produto__media--contida' : '') }, [
           U.criarImagem(produto.imagem, produto.nome),
           produto.destaque ? U.criar('span', { class: 'produto__selo', texto: 'Destaque' }) : null,
           U.criar('span', { class: 'produto__icone' }, [U.icone(produto.icone || 'imagem', 20)])

@@ -69,12 +69,11 @@
      destaque:  true mostra a etiqueta "Destaque" (opcional)
      Os preços abaixo são apenas exemplos.                                   */
   const produtos = [
-    { id: 'p1', nome: 'Impressão Pôr do Sol',        categoria: 'Impressões',          preco: 25000,  icone: 'imagem',  imagem: exemplo('photo-1534218238612-bace67b05bf2') },
-    { id: 'p2', nome: 'Impressão Colecção Retrato',  categoria: 'Impressões',          preco: 30000,  icone: 'imagem',  imagem: exemplo('photo-1544124094-8aea0374da93') },
-    { id: 'p3', nome: 'Quadro Paisagem com Moldura', categoria: 'Quadros com Moldura', preco: 65000,  icone: 'moldura', imagem: exemplo('photo-1684741892149-e741a75f8f71'), destaque: true },
-    { id: 'p4', nome: 'Conjunto Galeria de Parede',  categoria: 'Quadros com Moldura', preco: 125000, icone: 'moldura', imagem: exemplo('photo-1684741892149-e741a75f8f71') },
-    { id: 'p5', nome: 'T-shirt do Estúdio',          categoria: 'Vestuário',           preco: 17500,  icone: 'tshirt',  imagem: exemplo('photo-1676113421666-172e5520b7a6'), destaque: true },
-    { id: 'p6', nome: 'T-shirt Logótipo Fotografia', categoria: 'Vestuário',           preco: 15000,  icone: 'tshirt',  imagem: exemplo('photo-1676113421666-172e5520b7a6') }
+    /* ----- Pacotes de CASAMENTOS (imagens = cartazes dos pacotes, em img/produtos/) ----- */
+    { id: 'cas-bronze',  nome: 'Pacote Bronze',  categoria: 'Casamentos', preco: 329400, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/pacote-bronze.jpg' },
+    { id: 'cas-prata',   nome: 'Pacote Prata',   categoria: 'Casamentos', preco: 393450, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/pacote-prata.jpg' },
+    { id: 'cas-ouro',    nome: 'Pacote Ouro',    categoria: 'Casamentos', preco: 484950, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/pacote-ouro.jpg' },
+    { id: 'cas-diamond', nome: 'Pacote Diamond', categoria: 'Casamentos', preco: 650900, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/pacote-diamond.jpg' }
   ];
 
   /* Publica as listas num objecto global "Estudio.dados" para os outros
