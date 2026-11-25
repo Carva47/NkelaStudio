@@ -36,7 +36,14 @@ window.ESTUDIO_CONFIG = {
     /* Como o formulário de contacto envia a mensagem:
          'whatsapp' → abre o WhatsApp com a mensagem já escrita
          'email'    → abre o programa de email (só funciona se "email" acima estiver preenchido) */
-    metodoEnvio: 'whatsapp'
+    metodoEnvio: 'whatsapp',
+
+    /* Mensagem que já vem escrita quando o visitante clica num botão de WhatsApp
+       (botão flutuante e cartão de contacto). O visitante pode editá-la antes de enviar. */
+    mensagemInicial: 'Olá, Nkela Studios! Vi o vosso site e gostaria de saber mais sobre os vossos serviços de fotografia e vídeo.',
+
+    /* Morada: cada item da lista é uma linha. */
+    morada: ['Ilha de Luanda, Avenida Mortala Mohamed', 'Junto à Unitel']
   },
 
   /* ----- REDES SOCIAIS -----

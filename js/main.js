@@ -60,7 +60,13 @@
     email:     function () { return config.contacto.email ? 'mailto:' + config.contacto.email : ''; },
     // Em "tel:" só podem ficar dígitos e o "+"
     telefone:  function () { return 'tel:' + String(config.contacto.telefone).replace(/[^\d+]/g, ''); },
-    whatsapp:  function () { return 'https://wa.me/' + config.contacto.whatsapp; },
+    // O "?text=" faz o WhatsApp abrir com a mensagem inicial (config.contacto.mensagemInicial) já escrita
+    whatsapp:  function () {
+      const texto = config.contacto.mensagemInicial;
+      return 'https://wa.me/' + config.contacto.whatsapp + (texto ? '?text=' + encodeURIComponent(texto) : '');
+    },
+    // Abre a pesquisa da morada no Google Maps
+    mapa:      function () { return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(config.contacto.morada.join(', ') + ', Luanda, Angola'); },
     tiktok:    function () { return config.redes.tiktok; },
     instagram: function () { return config.redes.instagram; },
     facebook:  function () { return config.redes.facebook; },

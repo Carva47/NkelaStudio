@@ -722,6 +722,8 @@ dialog::backdrop {
   border-radius: var(--raio);
   transition: border-color var(--transicao), transform var(--transicao);
 }
+.canais__largo { grid-column: 1 / -1; }   /* cartão da localização: largura toda */
+.canais__largo strong { white-space: normal; }
 .canais a:hover { border-color: var(--cor-primaria); transform: translateY(-2px); }
 .canais__icone { width: 2rem; height: 2rem; object-fit: contain; flex-shrink: 0; }
 .canais small { display: block; color: var(--cor-texto-mudo); font-size: 0.78rem; line-height: 1.2; }

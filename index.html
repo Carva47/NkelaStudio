@@ -26,6 +26,14 @@
   <!-- Marca o <html> com a classe "js" assim que a página começa a carregar.
        O CSS usa-a para activar as animações de aparecimento (ver base.css).
        Se o JavaScript estiver desligado, a classe não existe e tudo fica visível. -->
+    <!-- Botão flutuante do WhatsApp (sempre visível, canto inferior direito).
+       O texto "Fale connosco" aparece ao passar o rato / dar foco (ver css/componentes.css). -->
+  <a class="whatsapp-flutuante" data-link="whatsapp" target="_blank" rel="noopener noreferrer"
+     aria-label="Falar connosco no WhatsApp">
+    <span class="whatsapp-flutuante__rotulo">Fale connosco</span>
+    <span class="whatsapp-flutuante__icone"><img src="img/icones/whatsapp-branco.png" alt="" width="32" height="32"></span>
+  </a>
+
   <script>document.documentElement.classList.add('js');</script>
 
   <!-- Folhas de estilo (a ORDEM importa: variáveis → base → componentes) -->
@@ -279,6 +287,13 @@
                 <span><small>TikTok</small><strong data-config="redesTexto.tiktok"></strong></span>
               </a>
             </li>
+            <!-- Localização: ocupa a largura toda; abre o Google Maps -->
+            <li class="canais__largo">
+              <a data-link="mapa" target="_blank" rel="noopener noreferrer">
+                <img class="canais__icone" src="img/icones/local.png" alt="" width="40" height="40">
+                <span><small>Localização</small><strong data-config="contacto.morada"></strong></span>
+              </a>
+            </li>
           </ul>
 
           <!-- Formulário reduzido: só nome e mensagem. "novalidate" desliga os balões
@@ -431,12 +446,5 @@
   <script src="js/loja.js"></script>
   <script src="js/contacto.js"></script>
   <script src="js/main.js"></script>
-  <!-- Botão flutuante do WhatsApp (sempre visível, canto inferior direito).
-       O texto "Fale connosco" aparece ao passar o rato / dar foco (ver css/componentes.css). -->
-  <a class="whatsapp-flutuante" data-link="whatsapp" target="_blank" rel="noopener noreferrer"
-     aria-label="Falar connosco no WhatsApp">
-    <span class="whatsapp-flutuante__rotulo">Fale connosco</span>
-    <span class="whatsapp-flutuante__icone"><img src="img/icones/whatsapp-branco.png" alt="" width="32" height="32"></span>
-  </a>
 </body>
 </html>

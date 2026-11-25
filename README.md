@@ -64,7 +64,7 @@ etiquetas) é o dourado, com texto escuro por cima, e o castanho aparece em bril
 
 ### 2. Dados do estúdio → `js/config.js`
 - `nome`, `slogan`, `logo` (ex.: `'img/logo.svg'`; vazio = mostra o nome em texto)
-- `contacto`: telefone, **WhatsApp** (só dígitos, com indicativo: `244911844888`) e email (vazio = não aparece)
+- `contacto`: telefone, **WhatsApp** (só dígitos, com indicativo: `244911844888`), `mensagemInicial` (SMS já escrita nos botões de WhatsApp), `morada` (linhas; o cartão abre o Google Maps) e email (vazio = não aparece)
 - `metodoEnvio`: `'whatsapp'` ou `'email'` (como o formulário de contacto entrega a mensagem)
 - `redes`: endereços do Instagram, Facebook, TikTok e YouTube (vazio = o ícone desaparece); `redesTexto`: o texto mostrado ao lado de cada ícone
 - `moeda`: símbolo e formato dos preços
