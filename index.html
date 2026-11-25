@@ -182,6 +182,10 @@
             Leve para casa um pedaço da nossa arte. Descubra impressões premium,
             quadros com moldura e vestuário exclusivo.
           </p>
+          <!-- Catálogo completo no WhatsApp Business -->
+          <a class="btn btn--contorno loja__catalogo" data-link="catalogo" target="_blank" rel="noopener noreferrer">
+            <span data-icone="sacola"></span> Ver catálogo no WhatsApp
+          </a>
         </div>
 
         <div class="filtros revelar" id="filtros-loja" role="group" aria-label="Filtrar produtos por categoria"></div>
@@ -239,62 +243,63 @@
     <section class="secao secao--escura" id="contacto" aria-labelledby="contacto-titulo">
       <div class="container">
 
-        <div class="secao__cabecalho revelar">
+        <div class="secao__cabecalho secao__cabecalho--curto revelar">
           <p class="secao__etiqueta">Fale Connosco</p>
           <h2 class="secao__titulo" id="contacto-titulo">Contacto</h2>
-          <p class="secao__descricao">
-            Pronto para criar algo inesquecível? Entre em contacto para falarmos do seu próximo projecto.
-          </p>
+          <p class="secao__descricao">Escolha o canal que preferir — respondemos depressa.</p>
         </div>
 
         <div class="contacto">
 
-          <!-- Dados de contacto -->
+          <!-- Canais de contacto (esquerda) -->
           <div class="revelar">
-            <h3>Informações de Contacto</h3>
 
-            <div class="contacto__lista">
-              <div class="contacto__item">
-                <span class="contacto__item-icone" data-icone="email"></span>
-                <div>
-                  <p class="contacto__rotulo">Email</p>
-                  <a data-link="email" data-config="contacto.email"></a>
-                </div>
-              </div>
+            <!-- Botão principal: abre uma conversa no WhatsApp -->
+            <a class="btn btn--primario btn--grande btn--bloco" data-link="whatsapp"
+               target="_blank" rel="noopener noreferrer">
+              <span data-icone="whatsapp"></span> Falar no WhatsApp
+            </a>
 
-              <div class="contacto__item">
-                <span class="contacto__item-icone" data-icone="telefone"></span>
-                <div>
-                  <p class="contacto__rotulo">Telefone</p>
-                  <a data-link="telefone" data-config="contacto.telefone"></a>
-                </div>
-              </div>
-
-              <div class="contacto__item">
-                <span class="contacto__item-icone" data-icone="local"></span>
-                <div>
-                  <p class="contacto__rotulo">Localização</p>
-                  <p data-config="contacto.morada"></p>
-                </div>
-              </div>
+            <!-- Páginas do WhatsApp Business (catálogo, equipa, localização) -->
+            <div class="contacto__atalhos">
+              <a class="btn btn--contorno" data-link="catalogo" target="_blank" rel="noopener noreferrer">
+                <span data-icone="sacola"></span> Catálogo
+              </a>
+              <a class="btn btn--contorno" data-link="equipa" target="_blank" rel="noopener noreferrer">
+                <span data-icone="equipa"></span> Equipa
+              </a>
+              <a class="btn btn--contorno" data-link="localizacao" target="_blank" rel="noopener noreferrer">
+                <span data-icone="local"></span> Localização
+              </a>
             </div>
 
-            <h3>Siga-nos</h3>
-            <div class="redes">
-              <a data-link="instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                <span data-icone="instagram"></span>
+            <div class="contacto__rodape">
+              <!-- Telefone (e email, se existir em config.js) -->
+              <a class="contacto__telefone" data-link="telefone">
+                <span data-icone="telefone"></span>
+                <span data-config="contacto.telefone"></span>
               </a>
-              <a data-link="facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-                <span data-icone="facebook"></span>
-              </a>
-              <a data-link="youtube" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
-                <span data-icone="youtube"></span>
-              </a>
+
+              <!-- Redes sociais: cada ícone abre a página do estúdio -->
+              <div class="redes">
+                <a data-link="instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                  <span data-icone="instagram"></span>
+                </a>
+                <a data-link="facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                  <span data-icone="facebook"></span>
+                </a>
+                <a data-link="tiktok" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+                  <span data-icone="tiktok"></span>
+                </a>
+                <a data-link="youtube" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                  <span data-icone="youtube"></span>
+                </a>
+              </div>
             </div>
           </div>
 
-          <!-- Formulário. "novalidate" desliga os balões de erro do navegador,
-               porque mostramos as nossas próprias mensagens (em contacto.js) -->
+          <!-- Formulário reduzido: só nome e mensagem. "novalidate" desliga os balões
+               de erro do navegador, porque mostramos as nossas (em contacto.js) -->
           <form class="formulario revelar" id="formulario-contacto" novalidate>
 
             <div class="campo">
@@ -305,27 +310,13 @@
             </div>
 
             <div class="campo">
-              <label for="campo-email">Email</label>
-              <input id="campo-email" name="email" type="email" autocomplete="email"
-                     placeholder="o.seu.email@exemplo.com" aria-describedby="erro-email" required>
-              <p class="campo__erro" id="erro-email" aria-live="polite"></p>
-            </div>
-
-            <div class="campo">
-              <label for="campo-assunto">Assunto</label>
-              <input id="campo-assunto" name="assunto" type="text"
-                     placeholder="Sobre o que quer falar?" aria-describedby="erro-assunto" required>
-              <p class="campo__erro" id="erro-assunto" aria-live="polite"></p>
-            </div>
-
-            <div class="campo">
               <label for="campo-mensagem">Mensagem</label>
-              <textarea id="campo-mensagem" name="mensagem" rows="5"
+              <textarea id="campo-mensagem" name="mensagem" rows="3"
                         placeholder="Fale-nos do seu projecto..." aria-describedby="erro-mensagem" required></textarea>
               <p class="campo__erro" id="erro-mensagem" aria-live="polite"></p>
             </div>
 
-            <button class="btn btn--primario btn--bloco" type="submit">Enviar Mensagem</button>
+            <button class="btn btn--primario btn--bloco" type="submit">Enviar por WhatsApp</button>
 
             <!-- Mensagem de sucesso/erro geral depois de enviar -->
             <p class="formulario__estado" id="estado-formulario" role="status" aria-live="polite"></p>

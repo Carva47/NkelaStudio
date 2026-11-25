@@ -689,43 +689,45 @@ dialog::backdrop {
    10. CONTACTO E FORMULÁRIO
    ========================================================================== */
 .contacto {
-  max-width: 64rem;
+  max-width: 56rem;
   margin-inline: auto;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
-}
-@media (min-width: 1024px) {
-  .contacto { grid-template-columns: 1fr 1fr; }
-}
-
-.contacto h3 { font-size: 1.25rem; margin-bottom: 1.5rem; }
-
-.contacto__lista { display: grid; gap: 1.5rem; margin-bottom: 2rem; }
-
-.contacto__item { display: flex; align-items: flex-start; gap: 1rem; }
-.contacto__item-icone {
-  flex-shrink: 0;
-  display: flex;
+  gap: 2rem;
   align-items: center;
-  justify-content: center;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  background: var(--cor-primaria-suave);
-  color: var(--cor-primaria);
 }
-.contacto__rotulo { color: var(--cor-texto-mudo); font-size: 0.9rem; }
-.contacto__item a:hover { color: var(--cor-primaria); }
+@media (min-width: 900px) {
+  .contacto { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+}
+
+/* Três botões pequenos lado a lado: Catálogo, Equipa, Localização */
+.contacto__atalhos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+/* Telefone à esquerda, ícones das redes à direita (empilha em ecrãs estreitos) */
+.contacto__rodape {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.contacto__telefone { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--cor-texto-suave); }
+.contacto__telefone:hover { color: var(--cor-primaria); }
 
 /* Botões redondos das redes sociais */
-.redes { display: flex; gap: 1rem; }
+.redes { display: flex; gap: 0.75rem; }
 .redes a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3rem;
-  height: 3rem;
+  width: 2.75rem;
+  height: 2.75rem;
   border-radius: 50%;
   background: var(--cor-fundo-alt);
   border: 1px solid var(--cor-borda);
@@ -733,14 +735,18 @@ dialog::backdrop {
 }
 .redes a:hover { border-color: var(--cor-primaria); color: var(--cor-primaria); }
 
+/* Botão do catálogo por baixo do texto da loja */
+.loja__catalogo { margin-top: 1.5rem; }
+#contacto.secao { padding-block: 3.5rem; }  /* secção de contacto mais curta */
+
 /* Cartão do formulário */
 .formulario {
-  padding: 2rem;
+  padding: 1.5rem;
   background: var(--cor-fundo-alt);
   border: 1px solid var(--cor-borda);
   border-radius: var(--raio);
   display: grid;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .campo { display: grid; gap: 0.5rem; }
@@ -824,3 +830,7 @@ dialog::backdrop {
   transition: transform var(--transicao);
 }
 .aviso.visivel { transform: translate(-50%, 0); }
+
+/* Ícones dentro de botões nunca encolhem (evita ícones minúsculos em botões estreitos) */
+.btn [data-icone] { flex-shrink: 0; }
+.btn [data-icone] svg { display: block; flex-shrink: 0; }

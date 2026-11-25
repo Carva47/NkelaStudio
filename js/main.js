@@ -57,10 +57,14 @@
 
   /* Elementos com data-link="..." recebem o endereço (href) certo */
   const construtoresDeLink = {
-    email:     function () { return 'mailto:' + config.contacto.email; },
+    email:     function () { return config.contacto.email ? 'mailto:' + config.contacto.email : ''; },
     // Em "tel:" só podem ficar dígitos e o "+"
     telefone:  function () { return 'tel:' + String(config.contacto.telefone).replace(/[^\d+]/g, ''); },
     whatsapp:  function () { return 'https://wa.me/' + config.contacto.whatsapp; },
+    catalogo:    function () { return config.links.catalogo; },
+    equipa:      function () { return config.links.equipa; },
+    localizacao: function () { return config.links.localizacao; },
+    tiktok:    function () { return config.redes.tiktok; },
     instagram: function () { return config.redes.instagram; },
     facebook:  function () { return config.redes.facebook; },
     youtube:   function () { return config.redes.youtube; }

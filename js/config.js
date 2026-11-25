@@ -25,30 +25,36 @@ window.ESTUDIO_CONFIG = {
 
   /* ----- CONTACTOS ----- */
   contacto: {
-    email: 'geral@seuestudio.ao',
-    telefone: '+244 900 000 000',
+    /* Email: deixe vazio ('') enquanto o estúdio não tiver um — não aparece no site. */
+    email: '',
+    telefone: '+244 911 844 888',
 
     /* Número de WhatsApp: só dígitos, com indicativo do país e sem "+".
-       Exemplo de Angola: 244 + número → '244900000000'.
        É para este número que vão as encomendas e as mensagens do formulário. */
-    whatsapp: '244900000000',
-
-    /* Morada: cada item da lista é uma linha. */
-    morada: ['Rua Exemplo, n.º 123', 'Luanda, Angola'],
+    whatsapp: '244911844888',
 
     /* Como o formulário de contacto envia a mensagem:
          'whatsapp' → abre o WhatsApp com a mensagem já escrita
-         'email'    → abre o programa de email do visitante                 */
+         'email'    → abre o programa de email (só funciona se "email" acima estiver preenchido) */
     metodoEnvio: 'whatsapp'
+  },
+
+  /* ----- LIGAÇÕES DO WHATSAPP BUSINESS -----
+     Páginas do WhatsApp Business do estúdio (vazio = o botão some do site). */
+  links: {
+    catalogo:    'https://wa.me/c/244911844888',                          // Catálogo / produtos
+    equipa:      'https://wa.me/p/29985004657753554/244911844888',        // Conheça a equipa
+    localizacao: 'https://wa.me/p/9594775420648695/244911844888'          // Como chegar ao estúdio
   },
 
   /* ----- REDES SOCIAIS -----
      Cole o endereço completo (https://...). Se deixar vazio (''),
-     o botão dessa rede some do site. */
+     o ícone dessa rede some do site. */
   redes: {
-    instagram: 'https://instagram.com/',
-    facebook: 'https://facebook.com/',
-    youtube: 'https://youtube.com/'
+    instagram: 'https://www.instagram.com/nkelastudios/',
+    facebook: 'https://web.facebook.com/nkelastudios',
+    tiktok: 'https://www.tiktok.com/@nkelastudios',
+    youtube: ''
   },
 
   /* ----- MOEDA (usada nos preços da loja) ----- */

@@ -2,7 +2,7 @@
    contacto.js  —  FORMULÁRIO DE CONTACTO
    --------------------------------------------------------------------------
    Responsável por:
-     1. Validar os campos (nome, email, assunto, mensagem)
+     1. Validar os campos (nome e mensagem)
      2. Mostrar mensagens de erro junto de cada campo
      3. Enviar: como o site não tem servidor, a mensagem é entregue abrindo
         o WhatsApp ou o programa de email do visitante, já com o texto escrito.
@@ -23,15 +23,6 @@
   const regras = {
     nome: function (valor) {
       if (valor.length < 2) return 'Escreva o seu nome.';
-      return '';
-    },
-    email: function (valor) {
-      // Verificação simples: algo@algo.algo (sem espaços)
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(valor)) return 'Escreva um email válido, por exemplo nome@exemplo.com.';
-      return '';
-    },
-    assunto: function (valor) {
-      if (valor.length < 3) return 'Indique o assunto.';
       return '';
     },
     mensagem: function (valor) {
@@ -84,20 +75,16 @@
 
     // Recolhe os valores
     const nome = formulario.elements.nome.value.trim();
-    const email = formulario.elements.email.value.trim();
-    const assunto = formulario.elements.assunto.value.trim();
     const mensagem = formulario.elements.mensagem.value.trim();
 
     const texto =
       'Olá! O meu nome é ' + nome + '.\n' +
-      'Email: ' + email + '\n' +
-      'Assunto: ' + assunto + '\n\n' +
       mensagem;
 
-    if (config.contacto.metodoEnvio === 'email') {
+    if (config.contacto.metodoEnvio === 'email' && config.contacto.email) {
       // "mailto:" abre o programa de email do visitante com tudo preenchido
       window.location.href = 'mailto:' + config.contacto.email +
-        '?subject=' + encodeURIComponent(assunto) +
+        '?subject=' + encodeURIComponent('Contacto pelo site — ' + nome) +
         '&body=' + encodeURIComponent(texto);
     } else {
       window.open('https://wa.me/' + config.contacto.whatsapp + '?text=' + encodeURIComponent(texto), '_blank', 'noopener');

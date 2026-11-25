@@ -62,9 +62,10 @@ etiquetas) é o dourado, com texto escuro por cima, e o castanho aparece em bril
 
 ### 2. Dados do estúdio → `js/config.js`
 - `nome`, `slogan`, `logo` (ex.: `'img/logo.svg'`; vazio = mostra o nome em texto)
-- `contacto`: email, telefone, **WhatsApp** (só dígitos, com indicativo: `244900000000`), morada
+- `contacto`: telefone, **WhatsApp** (só dígitos, com indicativo: `244911844888`) e email (vazio = não aparece)
+- `links`: catálogo, equipa e localização (páginas do WhatsApp Business)
 - `metodoEnvio`: `'whatsapp'` ou `'email'` (como o formulário de contacto entrega a mensagem)
-- `redes`: endereços do Instagram, Facebook e YouTube (vazio = o botão desaparece)
+- `redes`: endereços do Instagram, Facebook, TikTok e YouTube (vazio = o ícone desaparece)
 - `moeda`: símbolo e formato dos preços
 
 ### 3. Portfólio e loja → `js/dados.js`
@@ -90,7 +91,7 @@ Os textos do hero, "Sobre" e rodapé estão directamente no HTML (em português)
 | Reprodutor de vídeo (YouTube ou ficheiro próprio) | `portfolio.js` |
 | Loja com filtros e carrinho (quantidades, remover, total, lembra-se após recarregar) | `loja.js` |
 | Encomenda: abre o WhatsApp com a lista e o total já escritos | `loja.js` |
-| Formulário com validação e mensagens de erro | `contacto.js` |
+| Contacto curto: botão WhatsApp, atalhos Catálogo/Equipa/Localização, ícones das redes e formulário de 2 campos (nome + mensagem, envia por WhatsApp) | `index.html`, `contacto.js` |
 | Imagens com carregamento preguiçoso e imagem de reserva se falharem | `utils.js` |
 
 ## Limitações (por ser só front-end)

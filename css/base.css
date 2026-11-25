@@ -149,6 +149,10 @@ h1, h2, h3, h4 {
   margin-bottom: 3rem;
 }
 
+.secao__cabecalho--curto { margin-bottom: 2rem; }  /* Contacto: cabeçalho mais compacto */
+.secao__cabecalho--curto .secao__etiqueta { margin-bottom: 0.5rem; }
+.secao__cabecalho--curto .secao__titulo { margin-bottom: 0.5rem; }
+
 .secao__etiqueta {
   color: var(--cor-primaria);
   font-size: 0.875rem;
