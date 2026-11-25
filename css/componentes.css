@@ -732,12 +732,12 @@ dialog::backdrop {
 /* ==========================================================================
    BOTÃO FLUTUANTE DO WHATSAPP
    Círculo verde com brilho e anel que pulsa; ao passar o rato (ou com o teclado)
-   abre uma "pílula" com o texto. Fica por cima de tudo, no lado direito, a meio da altura do ecrã.
+   abre uma "pílula" com o texto. Fica por cima de tudo, no lado direito, a 70% da altura do ecrã.
    ========================================================================== */
 .whatsapp-flutuante {
   position: fixed;
   right: 1.25rem;
-  top: 50%;                          /* a meio da altura do ecrã (antes: no fundo) */
+  top: 70%;                          /* a 70% da altura do ecrã: abaixo do centro, longe do fundo (ajuste aqui) */
   translate: 0 -50%;                 /* centra na vertical sem interferir com o efeito hover */
   z-index: 55;                       /* acima do conteúdo, abaixo das janelas (<dialog>) */
   display: inline-flex;

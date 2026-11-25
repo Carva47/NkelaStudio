@@ -93,7 +93,7 @@ Os textos do hero, "Sobre" e rodapé estão directamente no HTML (em português)
 | Loja com filtros e carrinho (quantidades, remover, total, lembra-se após recarregar) | `loja.js` |
 | Encomenda: abre o WhatsApp com a lista e o total já escritos | `loja.js` |
 | Contacto curto: canais com os ícones da marca (WhatsApp, Instagram, Facebook, TikTok) e formulário de 2 campos (nome + mensagem; **envio ainda por ligar**, ver `enviarMensagem` em `js/contacto.js`) | `index.html`, `contacto.js` |
-| Botão flutuante do WhatsApp (lado direito a meio do ecrã, com pulso e texto ao passar o rato) | `index.html`, `componentes.css` |
+| Botão flutuante do WhatsApp (lado direito, a 70% da altura do ecrã, com pulso e texto ao passar o rato) | `index.html`, `componentes.css` |
 | Rodapé: 4 colunas (marca e redes, navegação, serviços, contactos) e barra final com "Voltar ao topo" | `index.html`, `componentes.css` |
 | Imagens com carregamento preguiçoso e imagem de reserva se falharem | `utils.js` |
 
