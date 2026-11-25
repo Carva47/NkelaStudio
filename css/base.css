@@ -140,6 +140,20 @@ h1, h2, h3, h4 {
   scroll-margin-top: var(--altura-nav);
 }
 
+.secao { position: relative; isolation: isolate; }
+
+/* PADRÃO DA MARCA no fundo de todas as secções: a imagem fica atrás do conteúdo (z-index -1)
+   mas à frente da cor de fundo. Para tirar, ponha --opacidade-padrao: 0 em variaveis.css. */
+.secao::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--opacidade-padrao);
+  background: url("../img/marca/padrao-dourado-espelhado.png") center top / var(--tamanho-padrao) auto repeat;
+}
+
 .secao--escura { background: var(--cor-fundo); }
 .secao--clara  { background: var(--cor-fundo-alt); }
 

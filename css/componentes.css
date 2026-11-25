@@ -848,6 +848,8 @@ dialog::backdrop {
    11. RODAPÉ
    ========================================================================== */
 .rodape {
+  position: relative;
+  isolation: isolate;
   padding-block: 3rem 2rem;
   background: var(--cor-fundo-alt);
   border-top: 1px solid var(--cor-borda);
@@ -864,6 +866,16 @@ dialog::backdrop {
 }
 
 .rodape .marca { margin-bottom: 1rem; }
+/* Padrão da marca também no rodapé */
+.rodape::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--opacidade-padrao);
+  background: url("../img/marca/padrao-dourado-espelhado.png") center / var(--tamanho-padrao) auto repeat;
+}
 .rodape .marca__img { height: 3.5rem; }
 .rodape p, .rodape li { color: var(--cor-texto-mudo); }
 .rodape h3 { font-size: 1rem; margin-bottom: 1rem; }

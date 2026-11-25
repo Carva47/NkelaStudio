@@ -42,6 +42,7 @@ Os ficheiros vêm da pasta partilhada "Nkela Studios - Identidade Visual" e est�
 | `logo-principal.png`, `logo-fundo-branco.png`, `logo-fundo-cinza.png` | Originais da marca, para fundos claros (não usados no site) |
 | `logo-sobre-castanho-original.png` | Original sobre fundo castanho |
 | `padrao-africano.png` / `padrao-dourado.png` | Padrão da marca; a versão dourada decora a primeira secção |
+| `padrao-dourado-espelhado.png` | Padrão dourado espelhado 2×2 (sem emendas), usado no fundo de todas as secções e do rodapé. Intensidade e tamanho em `css/variaveis.css` (`--opacidade-padrao`, `--tamanho-padrao`; `0` desliga) |
 | `icones-redes-castanho.png` | Folha de ícones da marca. Os ícones foram recortados e pintados a dourado em `img/icones/` (usados no Contacto e no botão do WhatsApp) |
 | `fundo-marca.jpg` | Fundo institucional da marca (referência) |
 | `favicon.png` | Ícone do separador do navegador |

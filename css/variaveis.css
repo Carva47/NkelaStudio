@@ -74,6 +74,12 @@
   --altura-nav: 5rem;            /* Altura do menu fixo no topo (5rem = 80px) */
   --espaco-secao: 5rem;          /* Espaço vertical acima/abaixo de cada secção */
   --largura-max: 1280px;         /* Largura máxima do conteúdo em ecrãs grandes */
+  /* Padrão africano da marca no fundo das secções e do rodapé.
+     --opacidade-padrao: 0 = invisível, 0.05 = subtil, 0.12 = bem visível.
+     --tamanho-padrao: largura de cada "azulejo" (padrao-dourado-espelhado.png, sem emendas). */
+  --opacidade-padrao: 0.055;
+  --tamanho-padrao: 1200px;
+
   --raio: 0.5rem;                /* Arredondamento dos cantos (botões, cartões) */
   --transicao: 300ms ease;       /* Velocidade das animações de hover */
 }
