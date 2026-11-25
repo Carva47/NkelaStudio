@@ -732,12 +732,13 @@ dialog::backdrop {
 /* ==========================================================================
    BOTÃO FLUTUANTE DO WHATSAPP
    Círculo verde com brilho e anel que pulsa; ao passar o rato (ou com o teclado)
-   abre uma "pílula" com o texto. Fica por cima de tudo, no canto inferior direito.
+   abre uma "pílula" com o texto. Fica por cima de tudo, no lado direito, a meio da altura do ecrã.
    ========================================================================== */
 .whatsapp-flutuante {
   position: fixed;
   right: 1.25rem;
-  bottom: 1.25rem;
+  top: 50%;                          /* a meio da altura do ecrã (antes: no fundo) */
+  translate: 0 -50%;                 /* centra na vertical sem interferir com o efeito hover */
   z-index: 55;                       /* acima do conteúdo, abaixo das janelas (<dialog>) */
   display: inline-flex;
   align-items: center;
@@ -799,7 +800,7 @@ dialog::backdrop {
 
 /* Telemóvel: um pouco mais pequeno e sem texto (não há "hover") */
 @media (max-width: 640px) {
-  .whatsapp-flutuante { right: 1rem; bottom: 1rem; }
+  .whatsapp-flutuante { right: 0.75rem; }
   .whatsapp-flutuante__icone { width: 3.1rem; height: 3.1rem; }
 }
 /* Quem pediu "reduzir movimento": sem pulso */
@@ -850,22 +851,17 @@ dialog::backdrop {
 .rodape {
   position: relative;
   isolation: isolate;
-  padding-block: 3rem 2rem;
-  background: var(--cor-fundo-alt);
-  border-top: 1px solid var(--cor-borda);
+  padding-block: 3.5rem 1.5rem;
+  background: linear-gradient(180deg, var(--cor-fundo-alt) 0%, var(--cor-fundo) 100%);
 }
-
-.rodape__grade {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  margin-bottom: 2rem;
+/* Linha fina em degradé dourado/castanho no topo do rodapé */
+.rodape::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cor-castanho), var(--cor-dourado), var(--cor-castanho), transparent);
 }
-@media (min-width: 768px) {
-  .rodape__grade { grid-template-columns: repeat(3, 1fr); }
-}
-
-.rodape .marca { margin-bottom: 1rem; }
 /* Padrão da marca também no rodapé */
 .rodape::before {
   content: "";
@@ -876,18 +872,94 @@ dialog::backdrop {
   opacity: var(--opacidade-padrao);
   background: url("../img/marca/padrao-dourado-espelhado.png") center / var(--tamanho-padrao) auto repeat;
 }
+
+/* ----- Faixa de chamada (cartão com vidro fosco) ----- */
+.rodape__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.75rem;
+  margin-bottom: 3rem;
+  border: 1px solid var(--cor-borda-destaque);
+  border-radius: calc(var(--raio) * 2);
+  background: linear-gradient(135deg, rgb(128 62 30 / 0.35), rgb(20 12 8 / 0.6));
+  backdrop-filter: blur(6px);
+}
+@media (min-width: 768px) {
+  .rodape__cta { flex-direction: row; align-items: center; justify-content: space-between; padding: 2rem 2.5rem; }
+}
+.rodape .rodape__cta-titulo { font-family: var(--fonte-titulos); font-weight: 700; font-size: clamp(1.25rem, 2.5vw, 1.6rem); color: #fff; }
+.rodape .rodape__cta-texto { color: var(--cor-texto-suave); margin-top: 0.25rem; }
+.rodape__cta-icone { display: block; }
+/* No botão dourado o ícone branco não se vê: escurece-o para ter contraste */
+.rodape__cta .btn img { filter: brightness(0) saturate(100%); }
+
+/* ----- Colunas ----- */
+.rodape__grade {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.25rem;
+  margin-bottom: 2.5rem;
+}
+@media (min-width: 640px)  { .rodape__grade { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .rodape__grade { grid-template-columns: 1.6fr 1fr 1.2fr 1.4fr; gap: 3rem; } }
+
+.rodape .marca { margin-bottom: 1rem; }
 .rodape .marca__img { height: 3.5rem; }
 .rodape p, .rodape li { color: var(--cor-texto-mudo); }
-.rodape h3 { font-size: 1rem; margin-bottom: 1rem; }
-.rodape ul { display: grid; gap: 0.5rem; }
+.rodape__marca p { max-width: 20rem; }
+
+.rodape h3 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cor-primaria);
+  margin-bottom: 1.1rem;
+}
+.rodape ul { display: grid; gap: 0.65rem; list-style: none; padding: 0; margin: 0; }
+.rodape a { transition: color var(--transicao); }
 .rodape a:hover { color: var(--cor-primaria); }
 
-.rodape__direitos {
-  padding-top: 2rem;
-  border-top: 1px solid var(--cor-borda);
-  text-align: center;
-  color: var(--cor-texto-mudo);
+/* Ligações de navegação: pequena seta que desliza ao passar o rato */
+.rodape nav a { display: inline-block; transition: color var(--transicao), transform var(--transicao); }
+.rodape nav a:hover { transform: translateX(4px); }
+
+/* Redes sociais: botões redondos com os ícones da marca */
+.rodape__redes { display: flex; gap: 0.6rem; margin-top: 1.25rem; }
+.rodape__redes a {
+  display: grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.04);
+  border: 1px solid var(--cor-borda);
+  transition: border-color var(--transicao), background var(--transicao), transform var(--transicao);
 }
+.rodape__redes a:hover { border-color: var(--cor-primaria); background: var(--cor-primaria-suave); transform: translateY(-3px); }
+.rodape__redes img { display: block; }
+
+/* Contactos: ícone + texto */
+.rodape__contactos li { display: flex; align-items: flex-start; gap: 0.7rem; }
+.rodape__contactos img { flex-shrink: 0; margin-top: 0.2rem; }
+
+/* ----- Barra final ----- */
+.rodape__fim {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--cor-borda);
+  font-size: 0.9rem;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .rodape__fim { flex-direction: row; justify-content: space-between; text-align: left; }
+}
+.rodape__topo { color: var(--cor-texto-suave); }
 
 
 /* ==========================================================================

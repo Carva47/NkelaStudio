@@ -26,7 +26,7 @@
   <!-- Marca o <html> com a classe "js" assim que a página começa a carregar.
        O CSS usa-a para activar as animações de aparecimento (ver base.css).
        Se o JavaScript estiver desligado, a classe não existe e tudo fica visível. -->
-    <!-- Botão flutuante do WhatsApp (sempre visível, canto inferior direito).
+    <!-- Botão flutuante do WhatsApp (sempre visível, lado direito a meio do ecrã).
        O texto "Fale connosco" aparece ao passar o rato / dar foco (ver css/componentes.css). -->
   <a class="whatsapp-flutuante" data-link="whatsapp" target="_blank" rel="noopener noreferrer"
      aria-label="Falar connosco no WhatsApp">
@@ -330,18 +330,41 @@
        ===================================================================== -->
   <footer class="rodape">
     <div class="container">
+
+      <!-- Faixa de chamada para acção: convida o visitante a falar connosco -->
+      <div class="rodape__cta">
+        <div>
+          <p class="rodape__cta-titulo">Vamos criar algo inesquecível?</p>
+          <p class="rodape__cta-texto">Conte-nos a sua ideia e preparamos o ensaio ou a cobertura à sua medida.</p>
+        </div>
+        <a class="btn btn--primario btn--grande" data-link="whatsapp" target="_blank" rel="noopener noreferrer">
+          <img src="img/icones/whatsapp-branco.png" alt="" width="22" height="22" class="rodape__cta-icone">
+          Falar no WhatsApp
+        </a>
+      </div>
+
       <div class="rodape__grade">
 
-        <div>
+        <!-- Coluna 1: marca + frase + redes sociais (ícones da marca) -->
+        <div class="rodape__marca">
           <div class="marca">
             <img class="marca__img" alt="" hidden>
             <span class="marca__texto" data-config="nome"></span>
           </div>
           <p>Capturando momentos e criando histórias através de fotografia e vídeo profissionais.</p>
+          <div class="rodape__redes">
+            <a data-link="instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <img src="img/icones/instagram.png" alt="" width="22" height="22"></a>
+            <a data-link="facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <img src="img/icones/facebook.png" alt="" width="22" height="22"></a>
+            <a data-link="tiktok" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+              <img src="img/icones/tiktok.png" alt="" width="22" height="22"></a>
+          </div>
         </div>
 
-        <div>
-          <h3>Ligações Rápidas</h3>
+        <!-- Coluna 2: navegação -->
+        <nav aria-label="Ligações rápidas">
+          <h3>Navegação</h3>
           <ul>
             <li><a href="#inicio">Início</a></li>
             <li><a href="#portfolio">Portfólio</a></li>
@@ -349,24 +372,41 @@
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#contacto">Contacto</a></li>
           </ul>
-        </div>
+        </nav>
 
+        <!-- Coluna 3: serviços (as mesmas categorias do portfólio) -->
         <div>
           <h3>Serviços</h3>
           <ul>
-            <li>Fotografia de Retrato</li>
-            <li>Fotografia de Casamento</li>
-            <li>Cobertura de Eventos</li>
-            <li>Vídeo Comercial</li>
-            <li>Impressões Personalizadas</li>
+            <li>Casamentos e Noivados</li>
+            <li>Aniversários e Kids</li>
+            <li>Gestantes e New Born</li>
+            <li>Baptísmos</li>
+            <li>Corporativo e Casuais</li>
+          </ul>
+        </div>
+
+        <!-- Coluna 4: contactos -->
+        <div>
+          <h3>Contactos</h3>
+          <ul class="rodape__contactos">
+            <li>
+              <img src="img/icones/telefone.png" alt="" width="18" height="18">
+              <a data-link="telefone" data-config="contacto.telefone"></a>
+            </li>
+            <li>
+              <img src="img/icones/local.png" alt="" width="18" height="18">
+              <a data-link="mapa" target="_blank" rel="noopener noreferrer" data-config="contacto.morada"></a>
+            </li>
           </ul>
         </div>
       </div>
 
-      <!-- O ano é preenchido automaticamente pelo main.js -->
-      <p class="rodape__direitos">
-        © <span data-ano></span> <span data-config="nome"></span>. Todos os direitos reservados.
-      </p>
+      <!-- Barra final: direitos + voltar ao topo. O ano é preenchido pelo main.js -->
+      <div class="rodape__fim">
+        <p>© <span data-ano></span> <span data-config="nome"></span>. Todos os direitos reservados.</p>
+        <a class="rodape__topo" href="#inicio" aria-label="Voltar ao topo">Voltar ao topo <span aria-hidden="true">↑</span></a>
+      </div>
     </div>
   </footer>
 
