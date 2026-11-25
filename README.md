@@ -66,7 +66,6 @@ etiquetas) é o dourado, com texto escuro por cima, e o castanho aparece em bril
 ### 2. Dados do estúdio → `js/config.js`
 - `nome`, `slogan`, `logo` (ex.: `'img/logo.svg'`; vazio = mostra o nome em texto)
 - `contacto`: telefone, **WhatsApp** (só dígitos, com indicativo: `244911844888`), `mensagemInicial` (SMS já escrita nos botões de WhatsApp), `morada` (linhas; o cartão abre o Google Maps) e email (vazio = não aparece)
-- `metodoEnvio`: `'whatsapp'` ou `'email'` (como o formulário de contacto entrega a mensagem)
 - `redes`: endereços do Instagram, Facebook, TikTok e YouTube (vazio = o ícone desaparece); `redesTexto`: o texto mostrado ao lado de cada ícone
 - `moeda`: símbolo e formato dos preços
 
@@ -93,9 +92,9 @@ Os textos do hero, "Sobre" e rodapé estão directamente no HTML (em português)
 | Reprodutor de vídeo (YouTube ou ficheiro próprio) | `portfolio.js` |
 | Loja com filtros e carrinho (quantidades, remover, total, lembra-se após recarregar) | `loja.js` |
 | Encomenda: abre o WhatsApp com a lista e o total já escritos | `loja.js` |
-| Contacto curto: canais com os ícones da marca (WhatsApp, Instagram, Facebook, TikTok) e formulário de 2 campos (nome + mensagem, envia por WhatsApp) | `index.html`, `contacto.js` |
+| Contacto curto: canais com os ícones da marca (WhatsApp, Instagram, Facebook, TikTok) e formulário de 2 campos (nome + mensagem; **envio ainda por ligar**, ver `enviarMensagem` em `js/contacto.js`) | `index.html`, `contacto.js` |
 | Botão flutuante do WhatsApp (lado direito a meio do ecrã, com pulso e texto ao passar o rato) | `index.html`, `componentes.css` |
-| Rodapé: faixa de chamada para WhatsApp, 4 colunas (marca e redes, navegação, serviços, contactos) e barra final com "Voltar ao topo" | `index.html`, `componentes.css` |
+| Rodapé: 4 colunas (marca e redes, navegação, serviços, contactos) e barra final com "Voltar ao topo" | `index.html`, `componentes.css` |
 | Imagens com carregamento preguiçoso e imagem de reserva se falharem | `utils.js` |
 
 ## Limitações (por ser só front-end)

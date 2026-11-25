@@ -4,9 +4,9 @@
    Responsável por:
      1. Validar os campos (nome e mensagem)
      2. Mostrar mensagens de erro junto de cada campo
-     3. Enviar: como o site não tem servidor, a mensagem é entregue abrindo
-        o WhatsApp ou o programa de email do visitante, já com o texto escrito.
-        O método escolhe-se em js/config.js (contacto.metodoEnvio).
+     3. Enviar: o envio AINDA NÃO ESTÁ LIGADO a nenhum serviço. Quando houver
+        um (servidor, Formspree, EmailJS, etc.), é só preencher a função
+        "enviarMensagem" mais abaixo — o resto do formulário já está pronto.
    ========================================================================== */
 
 (function () {
@@ -74,25 +74,25 @@
     }
 
     // Recolhe os valores
-    const nome = formulario.elements.nome.value.trim();
-    const mensagem = formulario.elements.mensagem.value.trim();
+    const dados = {
+      nome: formulario.elements.nome.value.trim(),
+      mensagem: formulario.elements.mensagem.value.trim()
+    };
 
-    const texto =
-      'Olá! O meu nome é ' + nome + '.\n' +
-      mensagem;
-
-    if (config.contacto.metodoEnvio === 'email' && config.contacto.email) {
-      // "mailto:" abre o programa de email do visitante com tudo preenchido
-      window.location.href = 'mailto:' + config.contacto.email +
-        '?subject=' + encodeURIComponent('Contacto pelo site — ' + nome) +
-        '&body=' + encodeURIComponent(texto);
-    } else {
-      window.open('https://wa.me/' + config.contacto.whatsapp + '?text=' + encodeURIComponent(texto), '_blank', 'noopener');
-    }
-
-    mostrarEstado('Obrigado! A sua mensagem está pronta para ser enviada — confirme o envio na janela que abriu.', true);
-    formulario.reset();
-    // Depois do reset, retira as marcas de erro/sucesso dos campos
-    Object.keys(regras).forEach(function (n) { formulario.elements[n].removeAttribute('aria-invalid'); });
+    enviarMensagem(dados);
   });
+
+  /* ----------------------------------------------------------------------
+     ENVIO DA MENSAGEM  (A PREENCHER)
+     Recebe { nome, mensagem } já validados. Quando existir um destino
+     (servidor, Formspree, EmailJS...), faça aqui o pedido de envio e, se
+     correr bem, chame:
+         mostrarEstado('Mensagem enviada. Obrigado!', true);
+         formulario.reset();
+     Por agora avisa o visitante de que o envio ainda não está disponível,
+     para ninguém pensar que a mensagem foi entregue.
+     ---------------------------------------------------------------------- */
+  function enviarMensagem(dados) { // eslint-disable-line no-unused-vars
+    mostrarEstado('De momento não é possível enviar mensagens por aqui. Use os contactos ao lado.', false);
+  }
 })();

@@ -296,7 +296,7 @@
             </li>
           </ul>
 
-          <!-- Formulário reduzido: só nome e mensagem. "novalidate" desliga os balões
+          <!-- Formulário simples: só nome e mensagem (o envio ainda não está ligado — ver js/contacto.js). "novalidate" desliga os balões
                de erro do navegador, porque mostramos as nossas (em contacto.js) -->
           <form class="formulario revelar" id="formulario-contacto" novalidate>
 
@@ -314,7 +314,7 @@
               <p class="campo__erro" id="erro-mensagem" aria-live="polite"></p>
             </div>
 
-            <button class="btn btn--primario btn--bloco" type="submit">Enviar por WhatsApp</button>
+            <button class="btn btn--primario btn--bloco" type="submit">Enviar Mensagem</button>
 
             <!-- Mensagem de sucesso/erro geral depois de enviar -->
             <p class="formulario__estado" id="estado-formulario" role="status" aria-live="polite"></p>
@@ -330,18 +330,6 @@
        ===================================================================== -->
   <footer class="rodape">
     <div class="container">
-
-      <!-- Faixa de chamada para acção: convida o visitante a falar connosco -->
-      <div class="rodape__cta">
-        <div>
-          <p class="rodape__cta-titulo">Vamos criar algo inesquecível?</p>
-          <p class="rodape__cta-texto">Conte-nos a sua ideia e preparamos o ensaio ou a cobertura à sua medida.</p>
-        </div>
-        <a class="btn btn--primario btn--grande" data-link="whatsapp" target="_blank" rel="noopener noreferrer">
-          <img src="img/icones/whatsapp-branco.png" alt="" width="22" height="22" class="rodape__cta-icone">
-          Falar no WhatsApp
-        </a>
-      </div>
 
       <div class="rodape__grade">
 

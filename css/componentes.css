@@ -873,28 +873,6 @@ dialog::backdrop {
   background: url("../img/marca/padrao-dourado-espelhado.png") center / var(--tamanho-padrao) auto repeat;
 }
 
-/* ----- Faixa de chamada (cartão com vidro fosco) ----- */
-.rodape__cta {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.25rem;
-  padding: 1.75rem;
-  margin-bottom: 3rem;
-  border: 1px solid var(--cor-borda-destaque);
-  border-radius: calc(var(--raio) * 2);
-  background: linear-gradient(135deg, rgb(128 62 30 / 0.35), rgb(20 12 8 / 0.6));
-  backdrop-filter: blur(6px);
-}
-@media (min-width: 768px) {
-  .rodape__cta { flex-direction: row; align-items: center; justify-content: space-between; padding: 2rem 2.5rem; }
-}
-.rodape .rodape__cta-titulo { font-family: var(--fonte-titulos); font-weight: 700; font-size: clamp(1.25rem, 2.5vw, 1.6rem); color: #fff; }
-.rodape .rodape__cta-texto { color: var(--cor-texto-suave); margin-top: 0.25rem; }
-.rodape__cta-icone { display: block; }
-/* No botão dourado o ícone branco não se vê: escurece-o para ter contraste */
-.rodape__cta .btn img { filter: brightness(0) saturate(100%); }
-
 /* ----- Colunas ----- */
 .rodape__grade {
   display: grid;
