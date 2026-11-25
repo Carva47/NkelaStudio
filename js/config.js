@@ -39,14 +39,6 @@ window.ESTUDIO_CONFIG = {
     metodoEnvio: 'whatsapp'
   },
 
-  /* ----- LIGAÇÕES DO WHATSAPP BUSINESS -----
-     Páginas do WhatsApp Business do estúdio (vazio = o botão some do site). */
-  links: {
-    catalogo:    'https://wa.me/c/244911844888',                          // Catálogo / produtos
-    equipa:      'https://wa.me/p/29985004657753554/244911844888',        // Conheça a equipa
-    localizacao: 'https://wa.me/p/9594775420648695/244911844888'          // Como chegar ao estúdio
-  },
-
   /* ----- REDES SOCIAIS -----
      Cole o endereço completo (https://...). Se deixar vazio (''),
      o ícone dessa rede some do site. */
@@ -55,6 +47,13 @@ window.ESTUDIO_CONFIG = {
     facebook: 'https://web.facebook.com/nkelastudios',
     tiktok: 'https://www.tiktok.com/@nkelastudios',
     youtube: ''
+  },
+
+  /* Texto mostrado ao lado de cada ícone na secção Contacto */
+  redesTexto: {
+    instagram: '@nkelastudios',
+    facebook: 'Nkela Studios',
+    tiktok: '@nkelastudios'
   },
 
   /* ----- MOEDA (usada nos preços da loja) ----- */

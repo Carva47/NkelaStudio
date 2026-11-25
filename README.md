@@ -42,7 +42,7 @@ Os ficheiros vêm da pasta partilhada "Nkela Studios - Identidade Visual" e est�
 | `logo-principal.png`, `logo-fundo-branco.png`, `logo-fundo-cinza.png` | Originais da marca, para fundos claros (não usados no site) |
 | `logo-sobre-castanho-original.png` | Original sobre fundo castanho |
 | `padrao-africano.png` / `padrao-dourado.png` | Padrão da marca; a versão dourada decora a primeira secção |
-| `icones-redes-castanho.png` | Folha de ícones de redes sociais (referência) |
+| `icones-redes-castanho.png` | Folha de ícones da marca. Os ícones foram recortados e pintados a dourado em `img/icones/` (usados no Contacto e no botão do WhatsApp) |
 | `fundo-marca.jpg` | Fundo institucional da marca (referência) |
 | `favicon.png` | Ícone do separador do navegador |
 
@@ -65,9 +65,8 @@ etiquetas) é o dourado, com texto escuro por cima, e o castanho aparece em bril
 ### 2. Dados do estúdio → `js/config.js`
 - `nome`, `slogan`, `logo` (ex.: `'img/logo.svg'`; vazio = mostra o nome em texto)
 - `contacto`: telefone, **WhatsApp** (só dígitos, com indicativo: `244911844888`) e email (vazio = não aparece)
-- `links`: catálogo, equipa e localização (páginas do WhatsApp Business)
 - `metodoEnvio`: `'whatsapp'` ou `'email'` (como o formulário de contacto entrega a mensagem)
-- `redes`: endereços do Instagram, Facebook, TikTok e YouTube (vazio = o ícone desaparece)
+- `redes`: endereços do Instagram, Facebook, TikTok e YouTube (vazio = o ícone desaparece); `redesTexto`: o texto mostrado ao lado de cada ícone
 - `moeda`: símbolo e formato dos preços
 
 ### 3. Portfólio e loja → `js/dados.js`
@@ -93,7 +92,8 @@ Os textos do hero, "Sobre" e rodapé estão directamente no HTML (em português)
 | Reprodutor de vídeo (YouTube ou ficheiro próprio) | `portfolio.js` |
 | Loja com filtros e carrinho (quantidades, remover, total, lembra-se após recarregar) | `loja.js` |
 | Encomenda: abre o WhatsApp com a lista e o total já escritos | `loja.js` |
-| Contacto curto: botão WhatsApp, atalhos Catálogo/Equipa/Localização, ícones das redes e formulário de 2 campos (nome + mensagem, envia por WhatsApp) | `index.html`, `contacto.js` |
+| Contacto curto: canais com os ícones da marca (WhatsApp, Instagram, Facebook, TikTok) e formulário de 2 campos (nome + mensagem, envia por WhatsApp) | `index.html`, `contacto.js` |
+| Botão flutuante do WhatsApp (canto inferior direito, com pulso e texto ao passar o rato) | `index.html`, `componentes.css` |
 | Imagens com carregamento preguiçoso e imagem de reserva se falharem | `utils.js` |
 
 ## Limitações (por ser só front-end)

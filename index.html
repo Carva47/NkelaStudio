@@ -186,10 +186,6 @@
             Leve para casa um pedaço da nossa arte. Descubra impressões premium,
             quadros com moldura e vestuário exclusivo.
           </p>
-          <!-- Catálogo completo no WhatsApp Business -->
-          <a class="btn btn--contorno loja__catalogo" data-link="catalogo" target="_blank" rel="noopener noreferrer">
-            <span data-icone="sacola"></span> Ver catálogo no WhatsApp
-          </a>
         </div>
 
         <div class="filtros revelar" id="filtros-loja" role="group" aria-label="Filtrar produtos por categoria"></div>
@@ -255,52 +251,35 @@
 
         <div class="contacto">
 
-          <!-- Canais de contacto (esquerda) -->
-          <div class="revelar">
-
-            <!-- Botão principal: abre uma conversa no WhatsApp -->
-            <a class="btn btn--primario btn--grande btn--bloco" data-link="whatsapp"
-               target="_blank" rel="noopener noreferrer">
-              <span data-icone="whatsapp"></span> Falar no WhatsApp
-            </a>
-
-            <!-- Páginas do WhatsApp Business (catálogo, equipa, localização) -->
-            <div class="contacto__atalhos">
-              <a class="btn btn--contorno" data-link="catalogo" target="_blank" rel="noopener noreferrer">
-                <span data-icone="sacola"></span> Catálogo
+          <!-- Canais de contacto (esquerda): ícone da marca + texto.
+               Os textos vêm de js/config.js; os ícones são da folha de ícones do estúdio
+               (recortados para img/icones/). Cada linha é um link. -->
+          <ul class="canais revelar">
+            <li>
+              <a data-link="whatsapp" target="_blank" rel="noopener noreferrer">
+                <img class="canais__icone" src="img/icones/whatsapp.png" alt="" width="40" height="40">
+                <span><small>WhatsApp</small><strong data-config="contacto.telefone"></strong></span>
               </a>
-              <a class="btn btn--contorno" data-link="equipa" target="_blank" rel="noopener noreferrer">
-                <span data-icone="equipa"></span> Equipa
+            </li>
+            <li>
+              <a data-link="instagram" target="_blank" rel="noopener noreferrer">
+                <img class="canais__icone" src="img/icones/instagram.png" alt="" width="40" height="40">
+                <span><small>Instagram</small><strong data-config="redesTexto.instagram"></strong></span>
               </a>
-              <a class="btn btn--contorno" data-link="localizacao" target="_blank" rel="noopener noreferrer">
-                <span data-icone="local"></span> Localização
+            </li>
+            <li>
+              <a data-link="facebook" target="_blank" rel="noopener noreferrer">
+                <img class="canais__icone" src="img/icones/facebook.png" alt="" width="40" height="40">
+                <span><small>Facebook</small><strong data-config="redesTexto.facebook"></strong></span>
               </a>
-            </div>
-
-            <div class="contacto__rodape">
-              <!-- Telefone (e email, se existir em config.js) -->
-              <a class="contacto__telefone" data-link="telefone">
-                <span data-icone="telefone"></span>
-                <span data-config="contacto.telefone"></span>
+            </li>
+            <li>
+              <a data-link="tiktok" target="_blank" rel="noopener noreferrer">
+                <img class="canais__icone" src="img/icones/tiktok.png" alt="" width="40" height="40">
+                <span><small>TikTok</small><strong data-config="redesTexto.tiktok"></strong></span>
               </a>
-
-              <!-- Redes sociais: cada ícone abre a página do estúdio -->
-              <div class="redes">
-                <a data-link="instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                  <span data-icone="instagram"></span>
-                </a>
-                <a data-link="facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-                  <span data-icone="facebook"></span>
-                </a>
-                <a data-link="tiktok" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
-                  <span data-icone="tiktok"></span>
-                </a>
-                <a data-link="youtube" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
-                  <span data-icone="youtube"></span>
-                </a>
-              </div>
-            </div>
-          </div>
+            </li>
+          </ul>
 
           <!-- Formulário reduzido: só nome e mensagem. "novalidate" desliga os balões
                de erro do navegador, porque mostramos as nossas (em contacto.js) -->
@@ -452,5 +431,12 @@
   <script src="js/loja.js"></script>
   <script src="js/contacto.js"></script>
   <script src="js/main.js"></script>
+  <!-- Botão flutuante do WhatsApp (sempre visível, canto inferior direito).
+       O texto "Fale connosco" aparece ao passar o rato / dar foco (ver css/componentes.css). -->
+  <a class="whatsapp-flutuante" data-link="whatsapp" target="_blank" rel="noopener noreferrer"
+     aria-label="Falar connosco no WhatsApp">
+    <span class="whatsapp-flutuante__rotulo">Fale connosco</span>
+    <span class="whatsapp-flutuante__icone"><img src="img/icones/whatsapp-branco.png" alt="" width="32" height="32"></span>
+  </a>
 </body>
 </html>

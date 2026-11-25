@@ -122,7 +122,7 @@
   display: inline-flex;
   align-items: center;
 }
-.marca__img { height: 4rem; width: auto; }
+.marca__img { height: 3.25rem; width: auto; }
 .marca__texto {
   font-family: var(--fonte-titulos);
   font-weight: 700;
@@ -241,7 +241,7 @@
 }
 
 .hero .marca { margin-bottom: 2rem; }
-.hero .marca__img { height: 12rem; }
+.hero .marca__img { height: 7.5rem; }  /* logótipo da primeira secção (antes 12rem: grande demais) */
 .hero .marca__texto { font-size: clamp(2rem, 6vw, 3.25rem); }
 
 .hero__slogan {
@@ -700,44 +700,110 @@ dialog::backdrop {
   .contacto { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
 }
 
-/* Três botões pequenos lado a lado: Catálogo, Equipa, Localização */
-.contacto__atalhos {
+/* Lista de canais: ícone da marca + rótulo pequeno + texto (2 colunas em ecrãs médios) */
+.canais {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+  grid-template-columns: 1fr;
   gap: 0.75rem;
-  margin-top: 0.75rem;
 }
-
-/* Telefone à esquerda, ícones das redes à direita (empilha em ecrãs estreitos) */
-.contacto__rodape {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 1.5rem;
+@media (min-width: 480px) and (max-width: 899px), (min-width: 1100px) {
+  .canais { grid-template-columns: 1fr 1fr; }
 }
-.contacto__telefone { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--cor-texto-suave); }
-.contacto__telefone:hover { color: var(--cor-primaria); }
-
-/* Botões redondos das redes sociais */
-.redes { display: flex; gap: 0.75rem; }
-.redes a {
+.canais a {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 50%;
+  gap: 0.65rem;
+  padding: 0.7rem 0.8rem;
   background: var(--cor-fundo-alt);
   border: 1px solid var(--cor-borda);
-  transition: border-color var(--transicao), color var(--transicao);
+  border-radius: var(--raio);
+  transition: border-color var(--transicao), transform var(--transicao);
 }
-.redes a:hover { border-color: var(--cor-primaria); color: var(--cor-primaria); }
+.canais a:hover { border-color: var(--cor-primaria); transform: translateY(-2px); }
+.canais__icone { width: 2rem; height: 2rem; object-fit: contain; flex-shrink: 0; }
+.canais small { display: block; color: var(--cor-texto-mudo); font-size: 0.78rem; line-height: 1.2; }
+.canais strong { display: block; font-weight: 600; font-size: 0.9rem; white-space: nowrap; }
 
-/* Botão do catálogo por baixo do texto da loja */
-.loja__catalogo { margin-top: 1.5rem; }
-#contacto.secao { padding-block: 3.5rem; }  /* secção de contacto mais curta */
+/* ==========================================================================
+   BOTÃO FLUTUANTE DO WHATSAPP
+   Círculo verde com brilho e anel que pulsa; ao passar o rato (ou com o teclado)
+   abre uma "pílula" com o texto. Fica por cima de tudo, no canto inferior direito.
+   ========================================================================== */
+.whatsapp-flutuante {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 55;                       /* acima do conteúdo, abaixo das janelas (<dialog>) */
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding: 0.35rem;
+  border-radius: 999px;
+  color: #fff;
+  background: linear-gradient(135deg, #2fe074 0%, #12a84f 100%);
+  box-shadow: 0 8px 24px rgb(18 168 79 / 0.45), 0 2px 6px rgb(0 0 0 / 0.35);
+  transition: transform var(--transicao), box-shadow var(--transicao), gap var(--transicao), padding var(--transicao);
+}
+.whatsapp-flutuante__icone {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 3.4rem;
+  height: 3.4rem;
+}
+.whatsapp-flutuante__icone img { width: 2rem; height: 2rem; display: block; }
+
+/* Anel que pulsa à volta do botão (chama a atenção sem incomodar) */
+.whatsapp-flutuante::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: inherit;
+  opacity: 0.55;
+  z-index: -1;
+  animation: whatsapp-pulso 2.6s ease-out infinite;
+}
+@keyframes whatsapp-pulso {
+  0%   { transform: scale(1);   opacity: 0.55; }
+  70%  { transform: scale(1.6); opacity: 0; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* Texto escondido por omissão; abre ao passar o rato / foco do teclado */
+.whatsapp-flutuante__rotulo {
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 0.95rem;
+  opacity: 0;
+  transition: max-width var(--transicao), opacity var(--transicao), padding var(--transicao);
+}
+.whatsapp-flutuante:hover,
+.whatsapp-flutuante:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgb(18 168 79 / 0.6), 0 2px 6px rgb(0 0 0 / 0.35);
+}
+.whatsapp-flutuante:hover .whatsapp-flutuante__rotulo,
+.whatsapp-flutuante:focus-visible .whatsapp-flutuante__rotulo {
+  max-width: 10rem;
+  opacity: 1;
+  padding-left: 1rem;
+}
+
+/* Telemóvel: um pouco mais pequeno e sem texto (não há "hover") */
+@media (max-width: 640px) {
+  .whatsapp-flutuante { right: 1rem; bottom: 1rem; }
+  .whatsapp-flutuante__icone { width: 3.1rem; height: 3.1rem; }
+}
+/* Quem pediu "reduzir movimento": sem pulso */
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-flutuante::before { animation: none; opacity: 0; }
+}
 
 /* Cartão do formulário */
 .formulario {
@@ -796,7 +862,7 @@ dialog::backdrop {
 }
 
 .rodape .marca { margin-bottom: 1rem; }
-.rodape .marca__img { height: 5rem; }
+.rodape .marca__img { height: 3.5rem; }
 .rodape p, .rodape li { color: var(--cor-texto-mudo); }
 .rodape h3 { font-size: 1rem; margin-bottom: 1rem; }
 .rodape ul { display: grid; gap: 0.5rem; }
