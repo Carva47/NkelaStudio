@@ -50,7 +50,9 @@ Os ficheiros vêm da pasta partilhada "Nkela Studios - Identidade Visual" e est�
 O castanho é escuro demais para texto sobre fundo escuro, por isso o destaque (botões, links activos,
 etiquetas) é o dourado, com texto escuro por cima, e o castanho aparece em brilhos, contornos e no logótipo.
 
-**Ainda por aplicar:** as fontes oficiais (não estavam na pasta) e os contactos e redes sociais reais (`js/config.js`). Portfólio, banner e imagem do "Sobre" já são fotos do estúdio (`img/portfolio/`, `img/banner-hero.jpg`, `img/sobre.jpg`).
+**Fontes:** Poppins já aplicada (`fontes/`, declarada em `css/fontes.css`). O **Espera Bold** (títulos) aguarda os ficheiros do estúdio: instruções no topo de `css/fontes.css`.
+
+**Ainda por aplicar:** o email e os vídeos (`youtubeId`). Contactos e redes sociais reais (`js/config.js`). Portfólio, banner e imagem do "Sobre" já são fotos do estúdio (`img/portfolio/`, `img/banner-hero.jpg`, `img/sobre.jpg`).
 
 ## Como personalizar
 

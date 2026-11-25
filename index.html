@@ -29,6 +29,10 @@
   <script>document.documentElement.classList.add('js');</script>
 
   <!-- Folhas de estilo (a ORDEM importa: variáveis → base → componentes) -->
+  <!-- Fontes do estúdio (carregadas primeiro, a partir da pasta /fontes) -->
+  <link rel="preload" href="fontes/poppins-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fontes/poppins-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fontes.css">
   <link rel="stylesheet" href="css/variaveis.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/componentes.css">
