@@ -101,7 +101,14 @@
        Preço = o do tamanho mais pequeno do cartaz. */
     { id: 'gest-conexao', nome: 'Pacote Conexão · Mãe e Bebê (a partir de 5 fotos)', categoria: 'Gestantes & New Born', preco: 9650, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/gest-conexao.jpg' },
     { id: 'gest-bencao', nome: 'Pacote Bênção · Mãe e Pai (a partir de 5 fotos)', categoria: 'Gestantes & New Born', preco: 13125, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/gest-bencao.jpg' },
-    { id: 'gest-linha-do-tempo', nome: 'Pacote Linha do Tempo · Da gestação ao 1º aniversário', categoria: 'Gestantes & New Born', preco: 89450, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/gest-linha-do-tempo.jpg' }
+    { id: 'gest-linha-do-tempo', nome: 'Pacote Linha do Tempo · Da gestação ao 1º aniversário', categoria: 'Gestantes & New Born', preco: 89450, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/gest-linha-do-tempo.jpg' },
+
+    /* ----- QUADROS (cartazes em img/produtos/) -----
+       Tabela completa: A5 4.900 | A4 5.800 | A3 11.600 | A2 16.800 | 50x75cm 27.500 | A1 35.000 | A0 113.300 | 2A0 131.600 Kz */
+    { id: 'quadro-tabela', nome: 'Quadros · tabela de tamanhos (a partir de A5)', categoria: 'Quadros', preco: 4900, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/quadro-tabela.jpg' },
+    { id: 'quadro-a5', nome: 'Quadro A5', categoria: 'Quadros', preco: 4900, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/quadro-a5.jpg' },
+    { id: 'quadro-a4', nome: 'Quadro A4', categoria: 'Quadros', preco: 5800, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/quadro-a4.jpg' },
+    { id: 'quadro-a3', nome: 'Quadro A3', categoria: 'Quadros', preco: 11600, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/quadro-a3.jpg' }
   ];
 
   /* Publica as listas num objecto global "Estudio.dados" para os outros
