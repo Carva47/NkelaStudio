@@ -22,27 +22,28 @@
   /* ----- FOTOGRAFIAS -----
      id:        número único (não repetir)
      titulo:    texto da legenda
-     categoria: usada nos filtros — fotos com a mesma categoria ficam juntas
+     categoria: usada nos filtros — fotos com a mesma categoria ficam juntas.
+                A ordem das categorias nos botões segue a ordem desta lista.
      imagem:    caminho ou endereço da foto                                  */
   const fotografias = [
-    { id: 1, titulo: 'Aniversário — 30 anos', categoria: 'Aniversários', imagem: 'img/portfolio/aniversarios-1.jpg' },
-    { id: 2, titulo: 'Aniversário — Balões', categoria: 'Aniversários', imagem: 'img/portfolio/aniversarios-2.jpg' },
-    { id: 3, titulo: 'Kids — Princesa dos 5 anos', categoria: 'Kids', imagem: 'img/portfolio/kids-1.jpg' },
-    { id: 4, titulo: 'Kids — Confetes e balões', categoria: 'Kids', imagem: 'img/portfolio/kids-2.jpg' },
-    { id: 5, titulo: 'Ensaio Casual — Fitness', categoria: 'Casuais', imagem: 'img/portfolio/casuais-1.jpg' },
-    { id: 6, titulo: 'Ensaio Casual — Tradição', categoria: 'Casuais', imagem: 'img/portfolio/casuais-2.jpg' },
-    { id: 7, titulo: 'Noivado — Elegância', categoria: 'Noivados', imagem: 'img/portfolio/noivados-1.jpg' },
-    { id: 8, titulo: 'Noivado — Retrato do noivo', categoria: 'Noivados', imagem: 'img/portfolio/noivados-2.jpg' },
-    { id: 9, titulo: 'Casamento — Pôr do sol na praia', categoria: 'Casamentos', imagem: 'img/portfolio/casamentos-1.jpg' },
-    { id: 10, titulo: 'Casamento — Primeira dança', categoria: 'Casamentos', imagem: 'img/portfolio/casamentos-2.jpg' },
-    { id: 11, titulo: 'Gestante — Luz suave', categoria: 'Gestantes', imagem: 'img/portfolio/gestantes-1.jpg' },
-    { id: 12, titulo: 'Gestante — Em casal', categoria: 'Gestantes', imagem: 'img/portfolio/gestantes-2.jpg' },
-    { id: 13, titulo: 'New Born — Sono sereno', categoria: 'New Born', imagem: 'img/portfolio/newborn-1.jpg' },
-    { id: 14, titulo: 'New Born — Detalhes', categoria: 'New Born', imagem: 'img/portfolio/newborn-2.jpg' },
-    { id: 15, titulo: 'Baptismo — O momento', categoria: 'Baptísmos', imagem: 'img/portfolio/baptismos-1.jpg' },
-    { id: 16, titulo: 'Baptismo — A bênção', categoria: 'Baptísmos', imagem: 'img/portfolio/baptismos-2.jpg' },
-    { id: 17, titulo: 'Corporativo — Executivo', categoria: 'Corporativas', imagem: 'img/portfolio/corporativas-1.jpg' },
-    { id: 18, titulo: 'Corporativo — Estilo profissional', categoria: 'Corporativas', imagem: 'img/portfolio/corporativas-2.jpg' }
+    { id: 1, titulo: 'Primeira dança', categoria: 'Casamentos', imagem: 'img/portfolio/casamentos-2.jpg' },
+    { id: 2, titulo: 'Pôr do sol na praia', categoria: 'Casamentos', imagem: 'img/portfolio/casamentos-1.jpg' },
+    { id: 3, titulo: 'Elegância', categoria: 'Noivados', imagem: 'img/portfolio/noivados-1.jpg' },
+    { id: 4, titulo: 'Retrato do noivo', categoria: 'Noivados', imagem: 'img/portfolio/noivados-2.jpg' },
+    { id: 5, titulo: '30 anos', categoria: 'Aniversário Adulto', imagem: 'img/portfolio/aniversarios-1.jpg' },
+    { id: 6, titulo: 'Balões', categoria: 'Aniversário Adulto', imagem: 'img/portfolio/aniversarios-2.jpg' },
+    { id: 7, titulo: 'Princesa dos 5 anos', categoria: 'Aniversário Kids', imagem: 'img/portfolio/kids-1.jpg' },
+    { id: 8, titulo: 'Confetes e balões', categoria: 'Aniversário Kids', imagem: 'img/portfolio/kids-2.jpg' },
+    { id: 9, titulo: 'Luz suave', categoria: 'Gestantes', imagem: 'img/portfolio/gestantes-1.jpg' },
+    { id: 10, titulo: 'Em casal', categoria: 'Gestantes', imagem: 'img/portfolio/gestantes-2.jpg' },
+    { id: 11, titulo: 'Sono sereno', categoria: 'New Born', imagem: 'img/portfolio/newborn-1.jpg' },
+    { id: 12, titulo: 'Detalhes', categoria: 'New Born', imagem: 'img/portfolio/newborn-2.jpg' },
+    { id: 13, titulo: 'O momento', categoria: 'Baptísmos', imagem: 'img/portfolio/baptismos-1.jpg' },
+    { id: 14, titulo: 'A bênção', categoria: 'Baptísmos', imagem: 'img/portfolio/baptismos-2.jpg' },
+    { id: 15, titulo: 'Fitness', categoria: 'Casuais', imagem: 'img/portfolio/casuais-1.jpg' },
+    { id: 16, titulo: 'Tradição', categoria: 'Casuais', imagem: 'img/portfolio/casuais-2.jpg' },
+    { id: 17, titulo: 'Executivo', categoria: 'Corporativas', imagem: 'img/portfolio/corporativas-1.jpg' },
+    { id: 18, titulo: 'Estilo profissional', categoria: 'Corporativas', imagem: 'img/portfolio/corporativas-2.jpg' }
   ];
 
   /* ----- VÍDEOS -----
