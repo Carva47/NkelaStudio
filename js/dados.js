@@ -95,7 +95,13 @@
     { id: 'aniv-happy-adulto', nome: 'Pacote Happy · Adultos (50 fotos mín.)', categoria: 'Aniversários & Crianças', preco: 74750, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/aniv-happy-adulto.jpg' },
     { id: 'aniv-pre-niver-baloes', nome: 'Pré-niver com balões · Adultos (a partir de 5 fotos)', categoria: 'Aniversários & Crianças', preco: 13975, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/aniv-pre-niver-baloes.jpg' },
     { id: 'aniv-pre-niver-cenario', nome: 'Pré-niver com cenário artificial (a partir de 5 fotos)', categoria: 'Aniversários & Crianças', preco: 8625, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/aniv-pre-niver-cenario.jpg' },
-    { id: 'aniv-niver-em-casa', nome: 'Sessão em casa (a partir de 10 fotos)', categoria: 'Aniversários & Crianças', preco: 16300, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/aniv-niver-em-casa.jpg' }
+    { id: 'aniv-niver-em-casa', nome: 'Sessão em casa (a partir de 10 fotos)', categoria: 'Aniversários & Crianças', preco: 16300, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/aniv-niver-em-casa.jpg' },
+
+    /* ----- GESTANTES & NEW BORN (cartazes em img/produtos/) -----
+       Preço = o do tamanho mais pequeno do cartaz. */
+    { id: 'gest-conexao', nome: 'Pacote Conexão · Mãe e Bebê (a partir de 5 fotos)', categoria: 'Gestantes & New Born', preco: 9650, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/gest-conexao.jpg' },
+    { id: 'gest-bencao', nome: 'Pacote Bênção · Mãe e Pai (a partir de 5 fotos)', categoria: 'Gestantes & New Born', preco: 13125, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/gest-bencao.jpg' },
+    { id: 'gest-linha-do-tempo', nome: 'Pacote Linha do Tempo · Da gestação ao 1º aniversário', categoria: 'Gestantes & New Born', preco: 89450, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/gest-linha-do-tempo.jpg' }
   ];
 
   /* Publica as listas num objecto global "Estudio.dados" para os outros
