@@ -73,7 +73,18 @@
     { id: 'cas-bronze',  nome: 'Pacote Bronze',  categoria: 'Casamentos', preco: 329400, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/pacote-bronze.jpg' },
     { id: 'cas-prata',   nome: 'Pacote Prata',   categoria: 'Casamentos', preco: 393450, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/pacote-prata.jpg' },
     { id: 'cas-ouro',    nome: 'Pacote Ouro',    categoria: 'Casamentos', preco: 484950, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/pacote-ouro.jpg' },
-    { id: 'cas-diamond', nome: 'Pacote Diamond', categoria: 'Casamentos', preco: 650900, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/pacote-diamond.jpg' }
+    { id: 'cas-diamond', nome: 'Pacote Diamond', categoria: 'Casamentos', preco: 650900, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/pacote-diamond.jpg' },
+
+    /* ----- Pacotes de APRESENTAÇÃO & NOIVADOS (cartazes em img/produtos/) -----
+       Modelo Fast: 1.350 Kz por foto x 150 fotos (mínimo) = 202.500 Kz */
+    { id: 'apres-easy', nome: 'Easy (Fotos digitais)', categoria: 'Apresentação & Noivados', preco: 69750, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/apres-easy.jpg' },
+    { id: 'apres-pack-1', nome: 'Pack 1 · Álbum 3D 50 fotos', categoria: 'Apresentação & Noivados', preco: 84750, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/apres-pack-1.jpg' },
+    { id: 'apres-pack-2', nome: 'Pack 2 · Álbum 3D 80 fotos', categoria: 'Apresentação & Noivados', preco: 135600, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/apres-pack-2.jpg' },
+    { id: 'apres-pack-3', nome: 'Pack 3 · Álbum 3D 100 fotos', categoria: 'Apresentação & Noivados', preco: 169500, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/apres-pack-3.jpg' },
+    { id: 'apres-pack-4', nome: 'Pack 4 · Álbum 3D 150 fotos', categoria: 'Apresentação & Noivados', preco: 254250, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/apres-pack-4.jpg' },
+    { id: 'apres-pack-5', nome: 'Pack 5 · Álbum 3D 200 fotos', categoria: 'Apresentação & Noivados', preco: 339000, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/apres-pack-5.jpg' },
+    { id: 'apres-flex', nome: 'Pacote Flex · Álbum digital', categoria: 'Apresentação & Noivados', preco: 274500, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/apres-flex.jpg' },
+    { id: 'apres-fast', nome: 'Modelo Fast · 150 fotos (mín.)', categoria: 'Apresentação & Noivados', preco: 202500, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/apres-fast.jpg' }
   ];
 
   /* Publica as listas num objecto global "Estudio.dados" para os outros
