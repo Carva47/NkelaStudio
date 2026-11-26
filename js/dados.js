@@ -87,16 +87,16 @@
     { id: 'apres-flex', nome: 'Pacote Flex · Álbum digital', categoria: 'Apresentação & Noivados', preco: 274500, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/apres-flex.jpg' },
     { id: 'apres-fast', nome: 'Modelo Fast · 150 fotos (mín.)', categoria: 'Apresentação & Noivados', preco: 202500, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/apres-fast.jpg' },
 
-    /* ----- ANIVERSÁRIOS & CRIANÇAS (cartazes em img/produtos/) -----
+    /* ----- ANIVERSÁRIO KIDS e ANIVERSÁRIO ADULTO (cartazes em img/produtos/) -----
        Cartazes com vários tamanhos: o preço aqui é o do tamanho mais pequeno.
        Happy Adultos: 1.495 Kz por foto x 50 fotos (mínimo) = 74.750 Kz */
-    { id: 'aniv-smile', nome: 'Pacote Smile · Crianças (a partir de 5 fotos)', categoria: 'Aniversários & Crianças', preco: 8495, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/aniv-smile.jpg' },
-    { id: 'aniv-smile-2', nome: 'Pacote Smile 2 · Crianças (a partir de 5 fotos)', categoria: 'Aniversários & Crianças', preco: 12345, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/aniv-smile-2.jpg' },
-    { id: 'aniv-happy-crianca', nome: 'Pacote Happy · Crianças (a partir de 50 fotos)', categoria: 'Aniversários & Crianças', preco: 70500, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/aniv-happy-crianca.jpg' },
-    { id: 'aniv-happy-adulto', nome: 'Pacote Happy · Adultos (50 fotos mín.)', categoria: 'Aniversários & Crianças', preco: 74750, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/aniv-happy-adulto.jpg' },
-    { id: 'aniv-pre-niver-baloes', nome: 'Pré-niver com balões · Adultos (a partir de 5 fotos)', categoria: 'Aniversários & Crianças', preco: 13975, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/aniv-pre-niver-baloes.jpg' },
-    { id: 'aniv-pre-niver-cenario', nome: 'Pré-niver com cenário artificial (a partir de 5 fotos)', categoria: 'Aniversários & Crianças', preco: 8625, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/aniv-pre-niver-cenario.jpg' },
-    { id: 'aniv-niver-em-casa', nome: 'Sessão em casa (a partir de 10 fotos)', categoria: 'Aniversários & Crianças', preco: 16300, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/aniv-niver-em-casa.jpg' },
+    { id: 'aniv-smile', nome: 'Pacote Smile · Crianças (a partir de 5 fotos)', categoria: 'Aniversário Kids', preco: 8495, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/aniv-smile.jpg' },
+    { id: 'aniv-smile-2', nome: 'Pacote Smile 2 · Crianças (a partir de 5 fotos)', categoria: 'Aniversário Kids', preco: 12345, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/aniv-smile-2.jpg' },
+    { id: 'aniv-happy-crianca', nome: 'Pacote Happy · Crianças (a partir de 50 fotos)', categoria: 'Aniversário Kids', preco: 70500, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/aniv-happy-crianca.jpg' },
+    { id: 'aniv-happy-adulto', nome: 'Pacote Happy · Adultos (50 fotos mín.)', categoria: 'Aniversário Adulto', preco: 74750, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/aniv-happy-adulto.jpg' },
+    { id: 'aniv-pre-niver-baloes', nome: 'Pré-niver com balões · Adultos (a partir de 5 fotos)', categoria: 'Aniversário Adulto', preco: 13975, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/aniv-pre-niver-baloes.jpg' },
+    { id: 'aniv-pre-niver-cenario', nome: 'Pré-niver com cenário artificial (a partir de 5 fotos)', categoria: 'Aniversário Adulto', preco: 8625, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/aniv-pre-niver-cenario.jpg' },
+    { id: 'aniv-niver-em-casa', nome: 'Sessão em casa (a partir de 10 fotos)', categoria: 'Aniversário Adulto', preco: 16300, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/aniv-niver-em-casa.jpg' },
 
     /* ----- GESTANTES & NEW BORN (cartazes em img/produtos/) -----
        Preço = o do tamanho mais pequeno do cartaz. */
