@@ -15,7 +15,7 @@ window.ESTUDIO_CONFIG = {
   nome: 'Nkela Studios',
 
   /* Frase curta por baixo do logótipo, na primeira secção */
-  slogan: 'Capturando momentos, criando histórias',
+  slogan: 'Galeria de histórias, memórias e artes visuais',
 
   /* Caminho para o logótipo. Coloque o ficheiro na pasta "img" e escreva
      aqui o caminho. O logótipo actual (fundo transparente, para fundos escuros)

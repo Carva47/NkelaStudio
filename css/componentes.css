@@ -241,16 +241,55 @@
 }
 
 .hero .marca { margin-bottom: 2rem; }
-.hero .marca__img { height: 7.5rem; }  /* logótipo da primeira secção (antes 12rem: grande demais) */
+.hero .marca__img {
+  height: 7.5rem;  /* logótipo da primeira secção (antes 12rem: grande demais) */
+  /* ANIMAÇÃO DO LOGÓTIPO (subtil), em três partes:
+     1) ao carregar a página nasce a cinzento e ganha a cor da marca (hero-logo-cor);
+     2) depois flutua devagar, para cima e para baixo (hero-logo-flutuar);
+     3) ao passar o rato ganha um brilho dourado (regra :hover abaixo). */
+  animation:
+    hero-logo-cor 2.4s ease-out both,
+    hero-logo-flutuar 7s ease-in-out 2.4s infinite;
+  transition: filter 0.4s ease;
+}
+.hero .marca__img:hover {
+  filter: drop-shadow(0 0 18px rgb(242 194 70 / 0.55));
+}
+
+/* Nasce cinzento e semi-transparente e ganha cor e tamanho normal */
+@keyframes hero-logo-cor {
+  0%   { filter: grayscale(1) brightness(1.15); opacity: 0; transform: scale(0.92); }
+  35%  { opacity: 1; }
+  100% { filter: grayscale(0) brightness(1);    opacity: 1; transform: scale(1); }
+}
+/* Flutuação lenta (6 px) */
+@keyframes hero-logo-flutuar {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+/* Entrada suave (usada pela frase do estúdio) */
+@keyframes hero-entrar {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* Quem pede "reduzir movimento" no sistema vê tudo parado */
+@media (prefers-reduced-motion: reduce) {
+  .hero .marca__img, .hero__slogan { animation: none; }
+}
 .hero .marca__texto { font-size: clamp(2rem, 6vw, 3.25rem); }
 
 .hero__slogan {
+  /* Frase do estúdio, em destaque logo abaixo do logótipo.
+     O texto vem de js/config.js (campo "slogan"). */
   color: var(--cor-primaria);
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  margin-bottom: 1.5rem;
+  font-weight: 500;
+  font-size: clamp(1.25rem, 3.4vw, 1.9rem);
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+  max-width: 34rem;
+  margin: 0 auto 2.25rem;
+  /* Entra suavemente depois do logótipo */
+  animation: hero-entrar 1s ease-out 0.9s both;
 }
 
 .hero__titulo {
