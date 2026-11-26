@@ -108,7 +108,11 @@
     { id: 'quadro-tabela', nome: 'Quadros · tabela de tamanhos (a partir de A5)', categoria: 'Quadros', preco: 4900, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/quadro-tabela.jpg' },
     { id: 'quadro-a5', nome: 'Quadro A5', categoria: 'Quadros', preco: 4900, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/quadro-a5.jpg' },
     { id: 'quadro-a4', nome: 'Quadro A4', categoria: 'Quadros', preco: 5800, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/quadro-a4.jpg' },
-    { id: 'quadro-a3', nome: 'Quadro A3', categoria: 'Quadros', preco: 11600, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/quadro-a3.jpg' }
+    { id: 'quadro-a3', nome: 'Quadro A3', categoria: 'Quadros', preco: 11600, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/quadro-a3.jpg' },
+
+    /* ----- SESSÃO SIMPLES (corporativas, casual, fitness, casal...) -----
+       Tabela: 5 fotos 8.150 | 10 fotos 16.300 | 15 fotos 24.450 | 20 fotos 32.600 Kz */
+    { id: 'sessao-simples', nome: 'Sessão Simples (a partir de 5 fotos)', categoria: 'Sessão Simples', preco: 8150, icone: 'imagem', ajuste: 'contida', imagem: 'img/produtos/sessao-simples.jpg' }
   ];
 
   /* Publica as listas num objecto global "Estudio.dados" para os outros
