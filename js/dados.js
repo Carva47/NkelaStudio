@@ -28,6 +28,9 @@
   const fotografias = [
     { id: 1, titulo: 'Primeira dança', categoria: 'Casamentos', imagem: 'img/portfolio/casamentos-2.jpg' },
     { id: 2, titulo: 'Pôr do sol na praia', categoria: 'Casamentos', imagem: 'img/portfolio/casamentos-1.jpg' },
+    { id: 19, titulo: 'Os noivos e o pajem', categoria: 'Casamentos', imagem: 'img/portfolio/casamentos-3.jpg' },
+    { id: 20, titulo: 'O vestido', categoria: 'Casamentos', imagem: 'img/portfolio/casamentos-4.jpg' },
+    { id: 21, titulo: 'Preto e branco', categoria: 'Casamentos', imagem: 'img/portfolio/casamentos-5.jpg' },
     { id: 3, titulo: 'Elegância', categoria: 'Noivados', imagem: 'img/portfolio/noivados-1.jpg' },
     { id: 4, titulo: 'Retrato do noivo', categoria: 'Noivados', imagem: 'img/portfolio/noivados-2.jpg' },
     { id: 5, titulo: '30 anos', categoria: 'Aniversário Adulto', imagem: 'img/portfolio/aniversarios-1.jpg' },
