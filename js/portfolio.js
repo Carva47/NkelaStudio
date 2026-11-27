@@ -3,9 +3,9 @@
    --------------------------------------------------------------------------
    Responsável por:
      1. Abas "Fotografia | Vídeo" (com navegação por setas do teclado)
-     2. Filtros por categoria nas fotografias
-     3. Criar os cartões das fotos e dos vídeos a partir de dados.js
-     4. Lightbox: ampliar a foto, navegar com setas/teclado/deslize no telemóvel
+     2. Cartões das categorias de fotografia (um cartão por categoria)
+     3. Galeria: ao clicar num cartão abre-se uma grelha com todas as fotos da categoria
+     4. Lightbox: ampliar uma foto da galeria, navegar com setas/teclado/deslize no telemóvel
      5. Janela de vídeo (YouTube ou ficheiro próprio)
    ========================================================================== */
 
@@ -20,7 +20,10 @@
   const abas = Array.from(document.querySelectorAll('[role="tab"][data-aba]'));
   const gradeFotos = document.getElementById('grade-fotos');
   const gradeVideos = document.getElementById('grade-videos');
-  const filtrosFotos = document.getElementById('filtros-fotos');
+  const galeria = document.getElementById('galeria');
+  const galeriaTitulo = document.getElementById('galeria-titulo');
+  const galeriaContagem = document.getElementById('galeria-contagem');
+  const galeriaGrade = document.getElementById('galeria-grade');
 
   const lightbox = document.getElementById('lightbox');
   const lbImagem = document.getElementById('lightbox-imagem');
@@ -35,7 +38,7 @@
   if (!gradeFotos || !gradeVideos) return;
 
   /* ----- Estado: o que está a ser mostrado neste momento ----- */
-  let fotosVisiveis = fotografias.slice(); // Fotos que passam no filtro actual
+  let fotosVisiveis = [];                  // Fotos da categoria aberta na galeria
   let indiceAtual = 0;                     // Posição da foto aberta no lightbox
 
 
@@ -74,49 +77,73 @@
 
 
   /* ======================================================================
-     2 e 3. FOTOGRAFIAS: FILTROS E CARTÕES
+     2. CARTÕES DAS CATEGORIAS
      ====================================================================== */
 
-  /** Desenha os cartões das fotos que passam no filtro */
-  function mostrarFotos(categoria) {
-    fotosVisiveis = categoria === 'Todos'
-      ? fotografias.slice()
-      : fotografias.filter(function (foto) { return foto.categoria === categoria; });
-
-    gradeFotos.replaceChildren(); // Limpa o que lá estava
-
-    if (fotosVisiveis.length === 0) {
-      gradeFotos.appendChild(U.criar('p', { class: 'vazio', texto: 'Ainda não há fotografias nesta categoria.' }));
-      return;
+  /* Agrupa as fotos por categoria, mantendo a ordem em que aparecem em dados.js.
+     Resultado: [ { nome: 'Casamentos', fotos: [...] }, { nome: 'Noivados', fotos: [...] }, ... ] */
+  const categorias = [];
+  fotografias.forEach(function (foto) {
+    let grupo = categorias.find(function (c) { return c.nome === foto.categoria; });
+    if (!grupo) {
+      grupo = { nome: foto.categoria, fotos: [] };
+      categorias.push(grupo);
     }
+    grupo.fotos.push(foto);
+  });
 
-    fotosVisiveis.forEach(function (foto, posicao) {
-      // Cada cartão é um <button>: pode ser usado com rato, toque e teclado
-      const cartao = U.criar('button', {
-        class: 'cartao-obra',
-        type: 'button',
-        'aria-label': 'Ampliar: ' + foto.titulo + ' (' + foto.categoria + ')'
-      }, [
-        U.criar('div', { class: 'cartao-obra__media' }, [
-          U.criarImagem(foto.imagem, foto.titulo),
-          U.criar('div', { class: 'cartao-obra__legenda' }, [
-            U.criar('p', { class: 'cartao-obra__categoria', texto: foto.categoria }),
-            U.criar('h3', { class: 'cartao-obra__titulo', texto: foto.titulo })
-          ])
-        ])
-      ]);
-      cartao.addEventListener('click', function () { abrirLightbox(posicao); });
-      gradeFotos.appendChild(cartao);
-    });
+  /** Texto "N fotografia(s)" com o plural certo */
+  function textoContagem(total) {
+    return total + (total === 1 ? ' fotografia' : ' fotografias');
   }
 
-  /* Cria os botões de filtro com as categorias que existem em dados.js */
-  const categoriasFotos = [];
-  fotografias.forEach(function (foto) {
-    if (categoriasFotos.indexOf(foto.categoria) === -1) categoriasFotos.push(foto.categoria);
+  categorias.forEach(function (categoria) {
+    // Cada cartão é um <button>: pode ser usado com rato, toque e teclado.
+    // A capa do cartão é a primeira foto da categoria.
+    const cartao = U.criar('button', {
+      class: 'cartao-obra cartao-obra--categoria',
+      type: 'button',
+      'aria-label': 'Abrir a galeria ' + categoria.nome + ' (' + textoContagem(categoria.fotos.length) + ')'
+    }, [
+      U.criar('div', { class: 'cartao-obra__media' }, [
+        U.criarImagem(categoria.fotos[0].imagem, categoria.nome),
+        U.criar('div', { class: 'cartao-obra__legenda' }, [
+          U.criar('p', { class: 'cartao-obra__categoria', texto: textoContagem(categoria.fotos.length) }),
+          U.criar('h3', { class: 'cartao-obra__titulo', texto: categoria.nome })
+        ])
+      ])
+    ]);
+    cartao.addEventListener('click', function () { abrirGaleria(categoria); });
+    gradeFotos.appendChild(cartao);
   });
-  U.criarFiltros(filtrosFotos, categoriasFotos, mostrarFotos);
-  mostrarFotos('Todos');
+
+
+  /* ======================================================================
+     3. GALERIA DA CATEGORIA
+     ====================================================================== */
+
+  /** Abre a janela com as miniaturas de todas as fotos da categoria */
+  function abrirGaleria(categoria) {
+    fotosVisiveis = categoria.fotos;
+    galeriaTitulo.textContent = categoria.nome;
+    galeriaContagem.textContent = textoContagem(categoria.fotos.length);
+    galeriaGrade.replaceChildren();
+
+    categoria.fotos.forEach(function (foto, posicao) {
+      const miniatura = U.criar('button', {
+        class: 'galeria__foto',
+        type: 'button',
+        'aria-label': 'Ampliar: ' + foto.titulo
+      }, [ U.criarImagem(foto.imagem, foto.titulo) ]);
+      miniatura.addEventListener('click', function () { abrirLightbox(posicao); });
+      galeriaGrade.appendChild(miniatura);
+    });
+
+    galeria.scrollTop = 0;
+    U.abrirDialogo(galeria);
+  }
+
+  U.ligarDialogo(galeria);
 
 
   /* ======================================================================
@@ -141,7 +168,11 @@
     U.abrirDialogo(lightbox);
   }
 
-  U.ligarDialogo(lightbox);
+  /* O lightbox abre POR CIMA da galeria. Quando fecha, a galeria continua aberta,
+     por isso voltamos a bloquear a rolagem da página (o "close" tinha-a libertado). */
+  U.ligarDialogo(lightbox, function () {
+    if (galeria.open) document.documentElement.style.overflow = 'hidden';
+  });
 
   document.getElementById('lightbox-anterior').addEventListener('click', function () {
     mostrarNoLightbox(indiceAtual - 1);

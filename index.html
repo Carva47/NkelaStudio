@@ -168,7 +168,7 @@
 
         <!-- Painel de fotografia -->
         <div id="painel-fotografia" role="tabpanel" aria-labelledby="aba-fotografia">
-          <div class="filtros" id="filtros-fotos" role="group" aria-label="Filtrar fotografias por categoria"></div>
+          <!-- Um cartão por categoria; ao clicar abre-se a galeria dessa categoria (portfolio.js) -->
           <div class="grade" id="grade-fotos"></div>
         </div>
 
@@ -402,6 +402,21 @@
   <!-- =====================================================================
        JANELAS (<dialog>) — ficam escondidas até o JavaScript as abrir
        ===================================================================== -->
+
+  <!-- Galeria de uma categoria: grelha com todas as fotos dessa categoria.
+       O título, a descrição e as miniaturas são preenchidos por portfolio.js. -->
+  <dialog class="galeria" id="galeria" aria-labelledby="galeria-titulo">
+    <div class="galeria__cabecalho">
+      <div>
+        <h3 class="galeria__titulo" id="galeria-titulo"></h3>
+        <p class="galeria__contagem" id="galeria-contagem"></p>
+      </div>
+      <button class="btn-icone" type="button" data-fechar aria-label="Fechar galeria">
+        <span data-icone="x"></span>
+      </button>
+    </div>
+    <div class="galeria__grade" id="galeria-grade"></div>
+  </dialog>
 
   <!-- Foto ampliada (lightbox) -->
   <dialog class="lightbox" id="lightbox" aria-label="Foto ampliada">

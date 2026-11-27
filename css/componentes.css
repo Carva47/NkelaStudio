@@ -522,6 +522,52 @@ dialog::backdrop {
 .lightbox__seta--anterior { left: 0.75rem; }
 .lightbox__seta--seguinte { right: 0.75rem; }
 
+/* Galeria de uma categoria (janela com a grelha de miniaturas) */
+.galeria {
+  width: min(70rem, 94vw);
+  max-height: 90vh;
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--cor-borda-destaque);
+  border-radius: var(--raio);
+  overflow-y: auto;
+}
+.galeria__cabecalho {
+  position: sticky; /* o título e o botão fechar ficam visíveis ao rolar */
+  top: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--cor-fundo-alt);
+  border-bottom: 1px solid var(--cor-borda);
+}
+.galeria__titulo { font-size: 1.4rem; color: #fff; }
+.galeria__contagem { color: var(--cor-primaria); font-size: 0.9rem; }
+.galeria__grade {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  padding: 1.25rem;
+}
+@media (min-width: 768px)  { .galeria__grade { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1024px) { .galeria__grade { grid-template-columns: repeat(4, 1fr); } }
+.galeria__foto {
+  display: block;
+  aspect-ratio: 3 / 4; /* miniaturas verticais, como a maioria das fotos de estúdio */
+  overflow: hidden;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background: var(--cor-fundo);
+  transition: border-color var(--transicao);
+}
+.galeria__foto:hover,
+.galeria__foto:focus-visible { border-color: var(--cor-primaria); }
+.galeria__foto img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.galeria__foto:hover img { transform: scale(1.06); }
+
 /* Janela do vídeo */
 .modal-video {
   width: min(60rem, 94vw);
